@@ -6,8 +6,8 @@ import Preview from './Preview'
 
 function App() {
   const [profile, setProfile] = React.useState({
-    backgroundColor: 'tomato',
-    textColor: 'gray'
+    backgroundColor: '#DDDDDD',
+    textColor: '#555555'
   })
   return (
     <main className='App'>

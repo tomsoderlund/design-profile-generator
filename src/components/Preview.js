@@ -2,13 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default ({ profile }) => <PreviewBox {...profile} >
-  This is a test
+  <h1>This is a headline</h1>
+  This is some text body. This is some text body. This is some text body.
 </PreviewBox>
 
 const PreviewBox = styled.div`
   display: inline-block;
   width: 20em;
   height: 10em;
+  padding: 1em;
+  margin-top: 1em;
 
   background-color: ${props => props.backgroundColor};
   color: ${props => props.textColor};
