@@ -1,5 +1,6 @@
 {
   "name": "design-profile-generator",
+  "description": "Make a graphic design profile",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
