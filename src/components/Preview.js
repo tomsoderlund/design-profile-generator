@@ -7,10 +7,11 @@ export default ({ profile }) => <PreviewBox {...profile} >
 </PreviewBox>
 
 const PreviewBox = styled.div`
-  display: inline-block;
+  display: block;
   width: 20em;
   height: 10em;
   padding: 1em;
+  margin: auto;
   margin-top: 1em;
 
   background-color: ${props => props.backgroundColor};

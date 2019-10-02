@@ -3,6 +3,7 @@ import './App.css';
 
 import Inputs from './Inputs'
 import Preview from './Preview'
+import OutputCSS from './OutputCSS'
 
 function App() {
   const [profile, setProfile] = React.useState({
@@ -15,6 +16,7 @@ function App() {
       <div>
         <Inputs profile={profile} setProfile={setProfile} />
         <Preview profile={profile} />
+        <OutputCSS profile={profile} />
       </div>
     </main>
   );
