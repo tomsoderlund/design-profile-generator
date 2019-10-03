@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default ({ profile }) => <OutputTextBox
-  readOnly
-  value={`body {
+export default ({ profile }) => (
+  <OutputTextBox
+    readOnly
+    value={`body {
   background-color: ${profile.backgroundColor};
   color: ${profile.textColor};
-}
-`}
-/>
+  }
+  `}
+  />
+)
 
 const OutputTextBox = styled.textarea`
   display: block;

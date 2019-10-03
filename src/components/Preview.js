@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default ({ profile }) => <PreviewBox {...profile} >
-  <h1>This is a headline</h1>
+export default ({ profile }) => (
+  <PreviewBox {...profile}>
+    <h1>This is a headline</h1>
   This is some text body. This is some text body. This is some text body.
-</PreviewBox>
+  </PreviewBox>
+)
 
 const PreviewBox = styled.div`
   display: block;

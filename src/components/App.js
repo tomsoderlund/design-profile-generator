@@ -1,11 +1,11 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 
 import Inputs from './Inputs'
 import Preview from './Preview'
 import OutputCSS from './OutputCSS'
 
-function App() {
+function App () {
   const [profile, setProfile] = React.useState({
     backgroundColor: '#DDDDDD',
     textColor: '#555555'
@@ -19,7 +19,7 @@ function App() {
         <OutputCSS profile={profile} />
       </div>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App

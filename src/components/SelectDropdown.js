@@ -10,7 +10,7 @@ export default (props) => {
   const optionTags = [
     <option key='null' value='null'>(none)</option>,
     ...props.options.map((option, index) => {
-      const value = (typeof (option) === 'object' && option.value || option.id)
+      const value = (typeof (option) === 'object' && (option.value || option.id))
         ? option.value || option.id
         : option
       const newOption = {
@@ -25,7 +25,9 @@ export default (props) => {
       return <option key={newOption.key} data-key={newOption.key} value={newOption.value}>{newOption.name}</option>
     })
   ]
-  return <select {...otherProps} onChange={handleChange.bind(undefined, props.onChange)}>
-    {optionTags}
-  </select>
+  return (
+    <select {...otherProps} onChange={handleChange.bind(undefined, props.onChange)}>
+      {optionTags}
+    </select>
+  )
 }

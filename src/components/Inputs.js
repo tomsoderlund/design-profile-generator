@@ -35,16 +35,18 @@ export default ({ profile, setProfile }) => {
     })
   }
 
-  return <DivLeft >
-    {inputFields.map(field => (
-      <div key={field.name}>
-        <label>
-          {field.title}:{' '}
-          <SmartInput type={field.type} options={field.options} value={profile[field.name]} onChange={event => handleChange(field.name, event)} />
-        </label>
-      </div>
-    ))}    
-  </DivLeft>
+  return (
+    <DivLeft>
+      {inputFields.map(field => (
+        <div key={field.name}>
+          <label>
+            {field.title}:{' '}
+            <SmartInput type={field.type} options={field.options} value={profile[field.name]} onChange={event => handleChange(field.name, event)} />
+          </label>
+        </div>
+      ))}
+    </DivLeft>
+  )
 }
 
 const DivLeft = styled.div`
