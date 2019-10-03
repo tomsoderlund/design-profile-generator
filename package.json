@@ -1,8 +1,8 @@
 {
   "name": "design-profile-generator",
-  "description": "Make a graphic design profile",
-  "version": "0.1.0",
-  "private": true,
+  "description": "Quickly generate a graphic design profile (CSS)",
+  "version": "1.0.0",
+  "license": "ISC",
   "homepage": "http://tomsoderlund.github.io/design-profile-generator",
   "scripts": {
     "start": "react-scripts start",
