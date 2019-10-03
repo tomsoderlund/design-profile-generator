@@ -1,6 +1,6 @@
 # Design Profile Generator
 
-Quickly generate a graphic design profile (CSS).
+Quickly generate a graphic design profile (as CSS).
 
 https://tomsoderlund.github.io/design-profile-generator/
 
