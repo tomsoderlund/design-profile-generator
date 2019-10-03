@@ -20,6 +20,9 @@ function App () {
         <Preview profile={profile} />
         <OutputCSS profile={profile} />
       </div>
+      <p>
+        Made by <a href='https://twitter.com/tomsoderlund'>@tomsoderlund</a>. Get the <a href='https://github.com/tomsoderlund/design-profile-generator'>source code on GitHub</a>.
+      </p>
     </main>
   )
 }
