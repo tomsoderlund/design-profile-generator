@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import SelectDropdown from './SelectDropdown'
+import googleFonts from '../config/googleFonts'
+
 const inputFields = [
   {
     name: 'backgroundColor',
@@ -11,8 +14,18 @@ const inputFields = [
     name: 'textColor',
     title: 'Text',
     type: 'color'
+  },
+  {
+    name: 'textFont',
+    title: 'Text font',
+    type: 'select',
+    options: googleFonts.items.map(item => item.family)
   }
 ]
+
+const SmartInput = (props) => props.type === 'select'
+  ? <SelectDropdown {...props} />
+  : <input {...props} />
 
 export default ({ profile, setProfile }) => {
   const handleChange = (fieldName, event) => {
@@ -27,7 +40,7 @@ export default ({ profile, setProfile }) => {
       <div key={field.name}>
         <label>
           {field.title}:{' '}
-          <input type={field.type} value={profile[field.name]} onChange={event => handleChange(field.name, event)} />
+          <SmartInput type={field.type} options={field.options} value={profile[field.name]} onChange={event => handleChange(field.name, event)} />
         </label>
       </div>
     ))}    
