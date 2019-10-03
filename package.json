@@ -3,12 +3,6 @@
   "description": "Make a graphic design profile",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
-    "react-scripts": "3.1.2",
-    "styled-components": "^4.4.0"
-  },
   "homepage": "http://tomsoderlund.github.io/design-profile-generator",
   "scripts": {
     "start": "react-scripts start",
@@ -16,10 +10,26 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "standard",
+    "fix": "standard --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "standard": {
+    "ignore": [
+      ".next"
+    ],
+    "globals": [
+      "beforeAll",
+      "beforeEach",
+      "describe",
+      "expect",
+      "it",
+      "jasmine",
+      "spyOn"
+    ]
   },
   "browserslist": {
     "production": [
@@ -33,7 +43,14 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-scripts": "3.1.2",
+    "styled-components": "^4.4.0"
+  },
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.1.1",
+    "standard": "^14.3.1"
   }
 }
