@@ -4,6 +4,13 @@ import styled from 'styled-components'
 import SelectDropdown from './SelectDropdown'
 import googleFonts from '../config/googleFonts'
 
+const shortFontCategory = category => category.replace('-serif', '').replace('monospace', 'mono')
+
+const allFonts = googleFonts.items.sort((a, b) => (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0)).map(item => ({
+  name: `${item.family} (${shortFontCategory(item.category)})`,
+  value: item.family
+}))
+
 const inputCategories = [
   {
     title: 'Background',
@@ -27,7 +34,7 @@ const inputCategories = [
         name: 'textFont',
         title: 'Text font',
         type: 'select',
-        options: googleFonts.items.map(item => item.family)
+        options: allFonts
       },
       {
         name: 'textSize',
@@ -49,7 +56,7 @@ const inputCategories = [
         name: 'headlineFont',
         title: 'Headline font',
         type: 'select',
-        options: googleFonts.items.map(item => item.family)
+        options: allFonts
       }
     ]
   }
