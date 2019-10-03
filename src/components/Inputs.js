@@ -28,7 +28,7 @@ const inputCategories = [
     fields: [
       {
         name: 'backgroundColor',
-        title: 'Background color',
+        title: 'Color',
         type: 'color'
       }
     ]
