@@ -20,6 +20,12 @@ const inputFields = [
     title: 'Text font',
     type: 'select',
     options: googleFonts.items.map(item => item.family)
+  },
+  {
+    name: 'headlineFont',
+    title: 'Headline font',
+    type: 'select',
+    options: googleFonts.items.map(item => item.family)
   }
 ]
 
@@ -45,6 +51,8 @@ export default ({ profile, setProfile }) => {
           </label>
         </div>
       ))}
+      <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${profile.textFont}:400&display=swap`} />
+      <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${profile.headlineFont}:400,700&display=swap`} />
     </DivLeft>
   )
 }

@@ -7,8 +7,12 @@ export default ({ profile }) => (
     value={`body {
   background-color: ${profile.backgroundColor};
   color: ${profile.textColor};
-  }
-  `}
+  font-family: '${profile.textFont}', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: '${profile.headlineFont}', sans-serif;
+}`}
   />
 )
 

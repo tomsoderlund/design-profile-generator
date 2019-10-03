@@ -18,6 +18,11 @@ const PreviewBox = styled.div`
 
   background-color: ${props => props.backgroundColor};
   color: ${props => props.textColor};
+  font-family: ${props => props.textFont};
+
+  h1, h2, h3 {
+    font-family: ${props => props.headlineFont};
+  }
 `
 
 /*
