@@ -25,9 +25,13 @@ const PreviewBox = styled.div`
   color: ${profile => profile.textColor};
   font-family: ${profile => profile.textFont};
   font-size: ${profile => profile.textSize};
+  font-weight: ${profile => profile.textWeight};
 
   h1, h2, h3 {
     color: ${profile => profile.headlineColor};
     font-family: ${profile => profile.headlineFont};
+    font-weight: ${profile => profile.headlineWeight};
+    ${profile => profile.headlineItalic ? 'font-style: italic;' : ''}
+    ${profile => profile.headlineUppercase ? 'text-transform: uppercase;' : ''}
   }
 `

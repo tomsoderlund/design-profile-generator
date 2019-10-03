@@ -9,11 +9,15 @@ export default ({ profile }) => (
   color: ${profile.textColor};
   font-family: '${profile.textFont}', sans-serif;
   font-size: ${profile.textSize};
+  font-weight: ${profile.textWeight};
 }
 
 h1, h2, h3 {
   color: ${profile.headlineColor};
   font-family: '${profile.headlineFont}', sans-serif;
+  font-weight: ${profile.headlineWeight};
+  ${profile.headlineItalic ? 'font-style: italic;' : ''}
+  ${profile.headlineUppercase ? 'text-transform: uppercase;' : ''}
 }`}
   />
 )

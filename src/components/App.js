@@ -10,7 +10,9 @@ function App () {
     backgroundColor: '#FFFFFF',
     textColor: '#555555',
     textFont: 'Open Sans',
-    textSize: '14px'
+    textSize: '14px',
+    textWeight: 'regular',
+    headlineWeight: 'bold'
   })
   return (
     <main className='App'>
