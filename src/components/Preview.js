@@ -28,6 +28,7 @@ const PreviewBox = styled.div`
   font-weight: ${profile => profile.textWeight};
 
   h1, h2, h3 {
+    line-height: 1.1em;
     color: ${profile => profile.headlineColor};
     font-family: ${profile => profile.headlineFont};
     font-weight: ${profile => profile.headlineWeight};

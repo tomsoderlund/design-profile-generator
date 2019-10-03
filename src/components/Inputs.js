@@ -14,7 +14,7 @@ const allFonts = googleFonts.items.sort((a, b) => (a.category > b.category) ? 1 
 const fontWeights = [
   { name: 'Thin (100)', value: 100 },
   { name: 'Light (300)', value: 300 },
-  { name: 'Regular (400)', value: 'regular' },
+  { name: 'Regular (400)', value: 'normal' },
   { name: 'Medium (500)', value: 500 },
   { name: 'Semi-Bold (600)', value: 600 },
   { name: 'Bold (700)', value: 'bold' },

@@ -11,7 +11,7 @@ function App () {
     textColor: '#555555',
     textFont: 'Open Sans',
     textSize: '14px',
-    textWeight: 'regular',
+    textWeight: 'normal',
     headlineWeight: 'bold'
   })
   return (

@@ -13,6 +13,7 @@ export default ({ profile }) => (
 }
 
 h1, h2, h3 {
+  line-height: 1.1em;
   color: ${profile.headlineColor};
   font-family: '${profile.headlineFont}', sans-serif;
   font-weight: ${profile.headlineWeight};
