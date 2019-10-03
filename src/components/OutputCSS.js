@@ -26,7 +26,7 @@ h1, h2, h3 {
 const OutputTextBox = styled.textarea`
   display: block;
   width: 20em;
-  min-height: 20em;
+  min-height: 24em;
   padding: 1em;
   margin: auto;
   margin-top: 1em;
@@ -34,8 +34,8 @@ const OutputTextBox = styled.textarea`
   background-color: #555555;
   color: #F5F5F5;
 
-  &:focus {
-    color: #00CED1;
+  &:hover {
+    background-color: #666666;
   }
 `
 

@@ -133,4 +133,8 @@ const DivLeft = styled.div`
   text-align: left;
   margin: auto;
   width: 15em;
+
+  p {
+    margin: 0.4em 0;
+  }
 `
