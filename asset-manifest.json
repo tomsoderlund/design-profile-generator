@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/design-profile-generator/static/css/main.41e48569.chunk.css",
-    "main.js": "/design-profile-generator/static/js/main.f11c9166.chunk.js",
-    "main.js.map": "/design-profile-generator/static/js/main.f11c9166.chunk.js.map",
+    "main.js": "/design-profile-generator/static/js/main.af05a581.chunk.js",
+    "main.js.map": "/design-profile-generator/static/js/main.af05a581.chunk.js.map",
     "runtime-main.js": "/design-profile-generator/static/js/runtime-main.c608733b.js",
     "runtime-main.js.map": "/design-profile-generator/static/js/runtime-main.c608733b.js.map",
-    "static/js/2.73152a79.chunk.js": "/design-profile-generator/static/js/2.73152a79.chunk.js",
-    "static/js/2.73152a79.chunk.js.map": "/design-profile-generator/static/js/2.73152a79.chunk.js.map",
+    "static/js/2.4486396c.chunk.js": "/design-profile-generator/static/js/2.4486396c.chunk.js",
+    "static/js/2.4486396c.chunk.js.map": "/design-profile-generator/static/js/2.4486396c.chunk.js.map",
     "index.html": "/design-profile-generator/index.html",
-    "precache-manifest.f3a1d43aa2635400c9e8e2c115bc6bd5.js": "/design-profile-generator/precache-manifest.f3a1d43aa2635400c9e8e2c115bc6bd5.js",
+    "precache-manifest.fbc17ddae5125333e6f861b0ff1b764f.js": "/design-profile-generator/precache-manifest.fbc17ddae5125333e6f861b0ff1b764f.js",
     "service-worker.js": "/design-profile-generator/service-worker.js",
     "static/css/main.41e48569.chunk.css.map": "/design-profile-generator/static/css/main.41e48569.chunk.css.map"
   }
