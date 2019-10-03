@@ -123,8 +123,8 @@ export default ({ profile, setProfile }) => {
           ))}
         </div>
       ))}
-      <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${profile.textFont}:100,300,400,500,600,700,800,900&display=swap`} />
-      <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${profile.headlineFont}:100,300,400,500,600,700,800,900&display=swap`} />
+      <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${profile.textFont}:100,300,400,500,600,700,800,900,100italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&display=swap`} />
+      <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${profile.headlineFont}:100,300,400,500,600,700,800,900,100italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&display=swap`} />
     </DivLeft>
   )
 }
