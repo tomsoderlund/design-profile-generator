@@ -4,30 +4,30 @@ import styled from 'styled-components'
 export default ({ profile }) => (
   <PreviewBox {...profile}>
     <h1>This is a headline</h1>
-  This is some text body. This is some text body. This is some text body.
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a nunc. In ante metus, gravida vel, bibendum et, mollis vitae, ipsum. Sed leo nibh, pulvinar dignissim, pretium eget, mattis id, erat.</p>
   </PreviewBox>
 )
+
+// const getCSS = (profile, fieldName, cssProp) => profile[fieldName] && profile[fieldName] !== ''
+//   ? `${cssProp}: ${profile => profile[fieldName]};`
+//   : ''
 
 const PreviewBox = styled.div`
   display: block;
   width: 20em;
-  height: 10em;
-  padding: 1em;
+  min-height: 10em;
+  padding: 1em 2em 3em;
   margin: auto;
   margin-top: 1em;
+  text-align: left;
 
-  background-color: ${props => props.backgroundColor};
-  color: ${props => props.textColor};
-  font-family: ${props => props.textFont};
+  background-color: ${profile => profile.backgroundColor};
+  color: ${profile => profile.textColor};
+  font-family: ${profile => profile.textFont};
+  font-size: ${profile => profile.textSize};
 
   h1, h2, h3 {
-    font-family: ${props => props.headlineFont};
+    color: ${profile => profile.headlineColor};
+    font-family: ${profile => profile.headlineFont};
   }
 `
-
-/*
-
-  font-family: ${props => props.theme.fontName};
-  color: ${weldTheme.blue};
-
-*/

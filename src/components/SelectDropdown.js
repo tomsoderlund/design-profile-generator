@@ -8,7 +8,7 @@ const handleChange = (onChange, event) => {
 export default (props) => {
   const { options, onChange, ...otherProps } = props
   const optionTags = [
-    <option key='null' value='null'>(none)</option>,
+    <option key='null' value=''>(none)</option>,
     ...props.options.map((option, index) => {
       const value = (typeof (option) === 'object' && (option.value || option.id))
         ? option.value || option.id
