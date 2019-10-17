@@ -5,11 +5,12 @@ import SelectDropdown from './SelectDropdown'
 import GoogleFontLink from './GoogleFontLink'
 import Themes from './Themes'
 import googleFonts from '../config/googleFonts'
+import selectedFonts from '../config/selectedFonts'
 
 const shortFontCategory = category => category.replace('-serif', '').replace('monospace', 'mono')
 
 const allFonts = googleFonts.items.sort((a, b) => (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0)).map(item => ({
-  name: `${item.family} (${shortFontCategory(item.category)})`,
+  name: `${selectedFonts.includes(item.family) ? '🔵 ' : ''}${item.family} (${shortFontCategory(item.category)})`,
   value: item.family
 }))
 
