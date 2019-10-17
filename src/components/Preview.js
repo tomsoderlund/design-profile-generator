@@ -2,10 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 import generateCSS from '../lib/generateCSS'
+import HamburgerMenu from './HamburgerMenu'
 
 export default ({ profile }) => (
   <PreviewBox {...profile} className='body'>
-    <nav>Header</nav>
+    <nav>
+      <HamburgerMenu profile={profile} />
+      <span>Header</span>
+    </nav>
     <main>
       <h1>This is a headline</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href='#'>Nam a nunc</a>. In ante metus, gravida vel, bibendum et, mollis vitae, ipsum. Sed leo nibh, pulvinar dignissim, pretium eget, mattis id, erat.</p>
