@@ -47,6 +47,7 @@
    },
    {
       "name": "Oak/Reeds",
+      "description": "Inspired by https://femmebot.github.io/google-type/",
       "profile": {
          "backgroundColor": "#ffffff",
          "textColor": "#333333",
@@ -58,6 +59,7 @@
    },
    {
       "name": "Fir/Bramble",
+      "description": "Inspired by https://femmebot.github.io/google-type/",
       "profile": {
          "backgroundColor": "#aa9955",
          "textColor": "#443333",
@@ -65,6 +67,19 @@
          "textFont": "Slabo 13px",
          "headlineFont": "Stint Ultra Expanded",
          "headlineColor": "#ffffff"
+      }
+   },
+   {
+      "name": "Crow/Raven",
+      "description": "Inspired by https://femmebot.github.io/google-type/",
+      "profile": {
+         "backgroundColor": "#4d081a",
+         "textColor": "#c8cbc1",
+         "textSize": "12px",
+         "actionColor": "#aae6d9",
+         "textFont": "Libre Baskerville",
+         "headlineFont": "Nixie One",
+         "headlineColor": "#e5ca9d"
       }
    }
 ]

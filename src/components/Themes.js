@@ -14,7 +14,7 @@ export default ({ setProfile }) => {
       <h2>Themes</h2>
       <div>
         {themes.map((theme, index) => (
-          <ThemeButton key={theme.name} onClick={event => onSelectTheme(index)} {...theme.profile}>
+          <ThemeButton key={theme.name} title={theme.description} onClick={event => onSelectTheme(index)} {...theme.profile}>
             {theme.name}
             <GoogleFontLink family={theme.profile.headlineFont || theme.profile.textFont} />
           </ThemeButton>
