@@ -58,15 +58,19 @@ export default ({ setProfile }) => {
     setProfile(Object.assign({}, themes[0].profile, themes[index].profile))
   }, [setProfile])
 
-  return <div>
-    <h2>Themes</h2>
+  return (
     <div>
-      {themes.map((theme, index) => <ThemeButton key={theme.name} onClick={event => onSelectTheme(index)} {...theme.profile}>
-        {theme.name}
-        <GoogleFontLink family={theme.profile.headlineFont || theme.profile.textFont} />
-      </ThemeButton>)}
+      <h2>Themes</h2>
+      <div>
+        {themes.map((theme, index) => (
+          <ThemeButton key={theme.name} onClick={event => onSelectTheme(index)} {...theme.profile}>
+            {theme.name}
+            <GoogleFontLink family={theme.profile.headlineFont || theme.profile.textFont} />
+          </ThemeButton>
+        ))}
+      </div>
     </div>
-  </div>
+  )
 }
 
 const ThemeButton = styled.button`
