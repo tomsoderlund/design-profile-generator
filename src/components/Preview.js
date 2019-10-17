@@ -1,16 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import generateCSS from '../lib/generateCSS'
+
 export default ({ profile }) => (
-  <PreviewBox {...profile}>
+  <PreviewBox {...profile} className='body'>
     <h1>This is a headline</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a nunc. In ante metus, gravida vel, bibendum et, mollis vitae, ipsum. Sed leo nibh, pulvinar dignissim, pretium eget, mattis id, erat.</p>
   </PreviewBox>
 )
-
-// const getCSS = (profile, fieldName, cssProp) => profile[fieldName] && profile[fieldName] !== ''
-//   ? `${cssProp}: ${profile => profile[fieldName]};`
-//   : ''
 
 const PreviewBox = styled.div`
   display: block;
@@ -21,18 +19,5 @@ const PreviewBox = styled.div`
   margin-top: 1em;
   text-align: left;
 
-  background-color: ${profile => profile.backgroundColor};
-  color: ${profile => profile.textColor};
-  font-family: ${profile => profile.textFont};
-  font-size: ${profile => profile.textSize};
-  font-weight: ${profile => profile.textWeight};
-
-  h1, h2, h3 {
-    line-height: 1.1em;
-    color: ${profile => profile.headlineColor};
-    font-family: ${profile => profile.headlineFont};
-    font-weight: ${profile => profile.headlineWeight};
-    ${profile => profile.headlineItalic ? 'font-style: italic;' : ''}
-    ${profile => profile.headlineUppercase ? 'text-transform: uppercase;' : ''}
-  }
+  ${profile => generateCSS(profile, '&')}
 `

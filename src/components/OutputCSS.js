@@ -1,25 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import generateCSS from '../lib/generateCSS'
+
 export default ({ profile }) => (
   <OutputTextBox
     readOnly
-    value={`body {
-  background-color: ${profile.backgroundColor};
-  color: ${profile.textColor};
-  font-family: '${profile.textFont}', sans-serif;
-  font-size: ${profile.textSize};
-  font-weight: ${profile.textWeight};
-}
-
-h1, h2, h3 {
-  line-height: 1.1em;
-  ${profile.headlineColor ? `color: ${profile.headlineColor};` : ''}
-  ${profile.headlineFont ? `font-family: '${profile.headlineFont}', sans-serif;` : ''}
-  font-weight: ${profile.headlineWeight};
-  ${profile.headlineItalic ? 'font-style: italic;' : ''}
-  ${profile.headlineUppercase ? 'text-transform: uppercase;' : ''}
-}`}
+    value={generateCSS(profile, 'body')}
   />
 )
 
@@ -33,6 +20,8 @@ const OutputTextBox = styled.textarea`
   border: none;
   background-color: #555555;
   color: #F5F5F5;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
 
   &:hover {
     background-color: #666666;
