@@ -13,7 +13,7 @@ export default ({ profile }) => (
 const OutputTextBox = styled.textarea`
   display: block;
   width: 20em;
-  min-height: 24em;
+  min-height: 30em;
   padding: 1em;
   margin: auto;
   margin-top: 1em;
@@ -26,11 +26,8 @@ const OutputTextBox = styled.textarea`
   &:hover {
     background-color: #666666;
   }
+
+  @media only screen and (max-width: 480px) {
+    width: 90%;
+  }
 `
-
-/*
-
-  font-family: ${props => props.theme.fontName};
-  color: ${weldTheme.blue};
-
-*/

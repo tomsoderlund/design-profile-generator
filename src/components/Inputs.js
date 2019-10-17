@@ -24,11 +24,31 @@ const fontWeights = [
 
 const inputCategories = [
   {
-    title: 'Background',
+    title: 'Colors',
     fields: [
       {
         name: 'backgroundColor',
-        title: 'Color',
+        title: 'Background',
+        type: 'color'
+      },
+      {
+        name: 'actionColor',
+        title: 'Actions',
+        type: 'color'
+      },
+      {
+        name: 'headerColor',
+        title: 'Header',
+        type: 'color'
+      },
+      {
+        name: 'textColor',
+        title: 'Text',
+        type: 'color'
+      },
+      {
+        name: 'headlineColor',
+        title: 'Headlines',
         type: 'color'
       }
     ]
@@ -36,11 +56,6 @@ const inputCategories = [
   {
     title: 'Text',
     fields: [
-      {
-        name: 'textColor',
-        title: 'Color',
-        type: 'color'
-      },
       {
         name: 'textFont',
         title: 'Typeface',
@@ -64,11 +79,6 @@ const inputCategories = [
   {
     title: 'Headlines',
     fields: [
-      {
-        name: 'headlineColor',
-        title: 'Color',
-        type: 'color'
-      },
       {
         name: 'headlineFont',
         title: 'Typeface',

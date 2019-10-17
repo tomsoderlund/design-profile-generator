@@ -8,6 +8,8 @@ import OutputCSS from './OutputCSS'
 function App () {
   const [profile, setProfile] = React.useState({
     backgroundColor: '#FFFFFF',
+    actionColor: 'dodgerblue',
+    headerColor: '#555555',
     textColor: '#555555',
     textFont: 'Open Sans',
     textSize: '14px',
@@ -16,7 +18,7 @@ function App () {
   })
   return (
     <main className='App'>
-      <h1>Design Profile Generator</h1>
+      <h1>Design Profile Generator v2</h1>
       <div className='Panels'>
         <Inputs profile={profile} setProfile={setProfile} />
         <Preview profile={profile} />
