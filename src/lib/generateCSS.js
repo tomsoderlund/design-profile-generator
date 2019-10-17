@@ -11,15 +11,16 @@ h1, h2, h3 {
   line-height: 1.1em;
   ${profile.headlineColor ? `color: ${profile.headlineColor};` : ''}
   ${profile.headlineFont ? `font-family: '${profile.headlineFont}', sans-serif;` : ''}
-  font-weight: ${profile.headlineWeight};
+  ${profile.headlineWeight ? `font-weight: ${profile.headlineWeight};` : ''}
   ${profile.headlineItalic ? 'font-style: italic;' : ''}
   ${profile.headlineUppercase ? 'text-transform: uppercase;' : ''}
 }
 
 nav {
-  background-color: ${profile.headerColor};
+  background-color: ${profile.headerColor || profile.textColor};
   color: ${profile.backgroundColor};
-  font-weight: ${profile.headlineWeight};
+  ${profile.headlineFont ? `font-family: '${profile.headlineFont}', sans-serif;` : ''}
+  ${profile.headlineWeight ? `font-weight: ${profile.headlineWeight};` : ''}
   ${profile.headlineItalic ? 'font-style: italic;' : ''}
   ${profile.headlineUppercase ? 'text-transform: uppercase;' : ''}
   padding: 0.8em;
@@ -36,7 +37,7 @@ a {
 
 /* #NiceAndSimple: Button - http://codepen.io/tomsoderlund/pen/qqyzqp */
 button {
-  background-color: ${profile.headerColor};
+  background-color: ${profile.headerColor || profile.textColor};
   color: ${profile.backgroundColor};
   position: relative;
   border-radius: 0.2em;
@@ -48,7 +49,8 @@ button {
   font-family: inherit;
   font-size: inherit;
   line-height: normal;
-  font-weight: ${profile.headlineWeight};
+  ${profile.headlineFont ? `font-family: '${profile.headlineFont}', sans-serif;` : ''}
+  ${profile.headlineWeight ? `font-weight: ${profile.headlineWeight};` : ''}
   ${profile.headlineItalic ? 'font-style: italic;' : ''}
   ${profile.headlineUppercase ? 'text-transform: uppercase;' : ''}
   text-align: center;

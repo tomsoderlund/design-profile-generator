@@ -4,18 +4,10 @@ import './App.css'
 import Inputs from './Inputs'
 import Preview from './Preview'
 import OutputCSS from './OutputCSS'
+import useProfile from '../lib/useProfile'
 
 function App () {
-  const [profile, setProfile] = React.useState({
-    backgroundColor: '#FFFFFF',
-    actionColor: 'dodgerblue',
-    headerColor: '#555555',
-    textColor: '#555555',
-    textFont: 'Open Sans',
-    textSize: '14px',
-    textWeight: 'normal',
-    headlineWeight: 'bold'
-  })
+  const [profile, setProfile] = useProfile()
   return (
     <main className='App'>
       <h1>Design Profile Generator v2</h1>

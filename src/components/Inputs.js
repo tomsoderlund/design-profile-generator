@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 import SelectDropdown from './SelectDropdown'
+import GoogleFontLink from './GoogleFontLink'
+import Themes from './Themes'
 import googleFonts from '../config/googleFonts'
 
 const shortFontCategory = category => category.replace('-serif', '').replace('monospace', 'mono')
@@ -120,9 +122,11 @@ export default ({ profile, setProfile }) => {
 
   return (
     <DivLeft>
+      <Themes setProfile={setProfile} />
+      <h2>Details</h2>
       {inputCategories.map(category => (
         <div key={category.title}>
-          <h2>{category.title}</h2>
+          <h3>{category.title}</h3>
           {category.fields.map(field => (
             <p key={field.name}>
               <label>
@@ -133,8 +137,8 @@ export default ({ profile, setProfile }) => {
           ))}
         </div>
       ))}
-      <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${profile.textFont}:100,300,400,500,600,700,800,900,100italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&display=swap`} />
-      <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${profile.headlineFont}:100,300,400,500,600,700,800,900,100italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&display=swap`} />
+      <GoogleFontLink family={profile.textFont} />
+      <GoogleFontLink family={profile.headlineFont} />
     </DivLeft>
   )
 }
