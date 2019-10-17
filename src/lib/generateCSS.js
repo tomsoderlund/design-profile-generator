@@ -60,7 +60,7 @@ button {
   transition: all 0.1s;
 }
 button:focus:not(:disabled) {
-
+  opacity: 0.8;
 }
 button:hover:not(:disabled) {
   opacity: 0.8;
