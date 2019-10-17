@@ -10,7 +10,7 @@ import selectedFonts from '../config/selectedFonts'
 const shortFontCategory = category => category.replace('-serif', '').replace('monospace', 'mono')
 
 const allFonts = googleFonts.items.sort((a, b) => (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0)).map(item => ({
-  name: `${selectedFonts.includes(item.family) ? '🔵 ' : ''}${item.family} (${shortFontCategory(item.category)})`,
+  name: `${item.family} (${shortFontCategory(item.category)})${selectedFonts.includes(item.family) ? ' 🔵' : ''}`,
   value: item.family
 }))
 
@@ -36,12 +36,12 @@ const inputCategories = [
       },
       {
         name: 'actionColor',
-        title: 'Actions',
+        title: 'Action/Primary',
         type: 'color'
       },
       {
         name: 'headerColor',
-        title: 'Header',
+        title: 'Header/Secondary',
         type: 'color'
       },
       {

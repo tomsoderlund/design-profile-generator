@@ -1,0 +1,70 @@
+[
+   {
+      "name": "Default",
+      "profile": {
+         "backgroundColor": "#FFFFFF",
+         "actionColor": "dodgerblue",
+         "textColor": "#555555",
+         "textFont": "Open Sans",
+         "textSize": "14px",
+         "textWeight": "normal",
+         "headlineWeight": "bold"
+      }
+   },
+   {
+      "name": "Donuts",
+      "profile": {
+         "backgroundColor": "#f6e8ce",
+         "actionColor": "#e56507",
+         "textColor": "#242321",
+         "textFont": "Nunito",
+         "headlineFont": "Bungee",
+         "headlineColor": "#f11f30",
+         "headlineWeight": "normal"
+      }
+   },
+   {
+      "name": "Fb",
+      "profile": {
+         "backgroundColor": "#ffffff",
+         "textColor": "#4b4f56",
+         "actionColor": "#4267b2",
+         "headerColor": "#4267b2",
+         "textFont": "system-ui"
+      }
+   },
+   {
+      "name": "Economy",
+      "profile": {
+         "backgroundColor": "#ffffff",
+         "textColor": "#121212",
+         "actionColor": "#e3120a",
+         "headerColor": "#383e42",
+         "textFont": "Georgia",
+         "headlineFont": "Roboto",
+         "headlineWeight": "normal"
+      }
+   },
+   {
+      "name": "Oak/Reeds",
+      "profile": {
+         "backgroundColor": "#ffffff",
+         "textColor": "#333333",
+         "actionColor": "#cc3311",
+         "textFont": "Vollkorn",
+         "headlineFont": "Unica One",
+         "headlineColor": "#cc3311"
+      }
+   },
+   {
+      "name": "Fir/Bramble",
+      "profile": {
+         "backgroundColor": "#aa9955",
+         "textColor": "#443333",
+         "actionColor": "#ffffff",
+         "textFont": "Slabo 13px",
+         "headlineFont": "Stint Ultra Expanded",
+         "headlineColor": "#ffffff"
+      }
+   }
+]
