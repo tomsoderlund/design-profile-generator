@@ -128,5 +128,11 @@ input:disabled,
 textarea:disabled,
 select:disabled {
   background-color: whitesmoke;
-}`)
+}
+
+${profile.backgroundColor ? `.color-background-bg { background-color: ${profile.backgroundColor}; }\n.color-background-fg { color: ${profile.backgroundColor}; }` : ''}
+${profile.textColor ? `.color-text-bg { background-color: ${profile.textColor}; }\n.color-text-fg { color: ${profile.textColor}; }` : ''}
+${profile.headlineColor ? `.color-headline-bg { background-color: ${profile.headlineColor}; }\n.color-headline-fg { color: ${profile.headlineColor}; }` : ''}
+${profile.actionColor ? `.color-action-primary-bg { background-color: ${profile.actionColor}; }\n.color-action-primary-fg { color: ${profile.actionColor}; }` : ''}
+${headerColor ? `.color-action-secondary-bg { background-color: ${headerColor}; }\n.color-action-secondary-fg { color: ${headerColor}; }` : ''}`)
 }
