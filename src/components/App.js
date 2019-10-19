@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+import { getSessionValue, setSessionValue } from '../lib/simpleSession'
+
 import './App.css'
 
 import Inputs from './Inputs'
@@ -7,12 +9,19 @@ import OutputCSS from './OutputCSS'
 import useProfile from '../lib/useProfile'
 
 function App () {
-  const [profile, setProfile] = useProfile()
+  const savedProfile = getSessionValue('profile', undefined, { useHash: false })
+  const [profile, setProfile] = useProfile(savedProfile)
+
+  const setProfileAndSession = useCallback(profile => {
+    setSessionValue('profile', profile, { updateQuery: true, useHash: false })
+    setProfile(profile)
+  }, [setProfile])
+
   return (
     <main className='App'>
       <h1>Design Profile Generator v2</h1>
       <div className='Panels'>
-        <Inputs profile={profile} setProfile={setProfile} />
+        <Inputs profile={profile} setProfile={setProfileAndSession} />
         <Preview profile={profile} />
         <OutputCSS profile={profile} />
       </div>
