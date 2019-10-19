@@ -12,6 +12,17 @@
       }
    },
    {
+      "name": "TS",
+      "profile": {
+         "backgroundColor": "white",
+         "actionColor": "darkturquoise",
+         "headerColor": "rebeccapurple",
+         "textColor": "#555555",
+         "textFont": "Source Sans Pro",
+         "headlineWeight": "normal"
+      }
+   },
+   {
       "name": "Donuts",
       "profile": {
          "backgroundColor": "#f6e8ce",
