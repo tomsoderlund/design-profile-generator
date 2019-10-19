@@ -3,7 +3,7 @@
       "name": "Default",
       "profile": {
          "backgroundColor": "#FFFFFF",
-         "actionColor": "dodgerblue",
+         "actionColor": "#1E90FF",
          "textColor": "#555555",
          "textFont": "Open Sans",
          "textSize": "14px",
@@ -14,9 +14,9 @@
    {
       "name": "TS",
       "profile": {
-         "backgroundColor": "white",
-         "actionColor": "darkturquoise",
-         "headerColor": "rebeccapurple",
+         "backgroundColor": "#FFFFFF",
+         "actionColor": "#00CED1",
+         "headerColor": "#663399",
          "textColor": "#555555",
          "textFont": "Source Sans Pro",
          "headlineWeight": "normal"
