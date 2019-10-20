@@ -9,7 +9,7 @@ import OutputCSS from './OutputCSS'
 import useProfile from '../lib/useProfile'
 
 function App () {
-  const savedProfile = getSessionValue('profile', undefined, { useHash: false })
+  const savedProfile = getSessionValue('profile', {}, { useHash: false })
   const [profile, setProfile] = useProfile(savedProfile)
 
   const setProfileAndSession = useCallback(profile => {

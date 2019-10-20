@@ -6,7 +6,7 @@ import themes from '../config/themes.json'
 
 export default ({ setProfile }) => {
   const onSelectTheme = useCallback(index => {
-    setProfile(Object.assign({}, themes[0].profile, themes[index].profile))
+    setProfile(themes[index].profile)
   }, [setProfile])
 
   return (
