@@ -43,6 +43,12 @@ main {
 a {
   color: ${fixedProfile.actionColor};
 }
+a:hover {
+  opacity: 0.6;
+}
+a:active {
+  opacity: 1;
+}
 
 /* #NiceAndSimple: Button - http://codepen.io/tomsoderlund/pen/qqyzqp */
 button {
