@@ -145,6 +145,7 @@ ${fixedProfile.textColor ? `.color-text-bg { background-color: ${fixedProfile.te
 ${fixedProfile.headlineColor ? `.color-headline-bg { background-color: ${fixedProfile.headlineColor}; }\n.color-headline-fg { color: ${fixedProfile.headlineColor}; }` : ''}
 ${fixedProfile.actionColor ? `.color-action-primary-bg { background-color: ${fixedProfile.actionColor}; }\n.color-action-primary-fg { color: ${fixedProfile.actionColor}; }` : ''}
 ${headerColor ? `.color-action-secondary-bg { background-color: ${headerColor}; }\n.color-action-secondary-fg { color: ${headerColor}; }` : ''}
+${headerColor ? `.color-header-bg { background-color: ${headerColor}; }` : ''}
 
 ${sourceInfo}`)
 }
