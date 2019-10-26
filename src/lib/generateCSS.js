@@ -42,6 +42,7 @@ main {
 
 a {
   color: ${fixedProfile.actionColor};
+  transition: all 0.2s;
 }
 a:hover {
   opacity: 0.6;
@@ -72,7 +73,7 @@ button {
   outline: none;
   padding: 0.6em;
   margin-right: 0.6em;
-  transition: all 0.1s;
+  transition: all 0.2s;
   min-width: 7em;
 }
 button:focus:not(:disabled) {
@@ -111,6 +112,7 @@ select {
   font-weight: inherit;
   padding: 0.6em;
   margin-right: 0.6em;
+  transition: all 0.2s;
   min-width: 15em;
 }
 input::placeholder,
