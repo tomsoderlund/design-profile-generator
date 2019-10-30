@@ -2,9 +2,9 @@
 
 Quickly generate a graphic design profile (as CSS).
 
-https://tomsoderlund.github.io/design-profile-generator/
+![Design Profile Generator](docs/design-profile-generator_github_preview.jpg)
 
-![Design Profile Generator](docs/demo.jpg)
+Try it: https://tomsoderlund.github.io/design-profile-generator/
 
 
 ## How to use
