@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { getSessionValue, setSessionValue } from '../lib/simpleSession'
+import { getSessionValue, setSessionValue } from 'simple-browser-session'
 
 import packageJson from '../../package.json'
 import './App.css'
