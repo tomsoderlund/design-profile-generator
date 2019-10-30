@@ -5,6 +5,8 @@
          "backgroundColor": "#FFFFFF",
          "actionColor": "#1E90FF",
          "textColor": "#555555",
+         "informationColor": "#fffa46",
+         "warningColor": "#fb1f52",
          "textFont": "Open Sans",
          "textSize": "14px",
          "textWeight": "normal",

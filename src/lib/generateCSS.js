@@ -1,6 +1,6 @@
 import themes from '../config/themes.json'
 
-const trimCode = str => str.replace(/\n {2}\n/g, '\n').replace(/\n {2}\n/g, '\n')
+const trimCode = str => str.replace(/\n {2}\n/g, '\n').replace(/\n {2}\n/g, '\n').replace(/\n\n\n/g, '\n\n')
 
 export default (profile, rootClass = '.body') => {
   const fixedProfile = Object.assign({}, themes[0].profile, profile)
@@ -148,6 +148,8 @@ ${fixedProfile.headlineColor ? `.color-headline-bg { background-color: ${fixedPr
 ${fixedProfile.actionColor ? `.color-action-primary-bg { background-color: ${fixedProfile.actionColor}; }\n.color-action-primary-fg { color: ${fixedProfile.actionColor}; }` : ''}
 ${headerColor ? `.color-action-secondary-bg { background-color: ${headerColor}; }\n.color-action-secondary-fg { color: ${headerColor}; }` : ''}
 ${headerColor ? `.color-header-bg { background-color: ${headerColor}; }` : ''}
+${fixedProfile.warningColor ? `.color-warning-bg { background-color: ${fixedProfile.warningColor}; }\n.color-warning-fg { color: ${fixedProfile.warningColor}; }` : ''}
+${fixedProfile.informationColor ? `.color-information-bg { background-color: ${fixedProfile.informationColor}; }\n.color-information-fg { color: ${fixedProfile.informationColor}; }` : ''}
 
 ${sourceInfo}`)
 }

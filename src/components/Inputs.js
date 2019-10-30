@@ -53,6 +53,16 @@ const inputCategories = [
         name: 'headlineColor',
         title: 'Headlines',
         type: 'color'
+      },
+      {
+        name: 'warningColor',
+        title: 'Warning',
+        type: 'color'
+      },
+      {
+        name: 'informationColor',
+        title: 'Information',
+        type: 'color'
       }
     ]
   },
