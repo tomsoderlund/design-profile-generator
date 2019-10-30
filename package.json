@@ -1,7 +1,7 @@
 {
   "name": "design-profile-generator",
   "description": "Quickly generate a graphic design profile (as CSS)",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "license": "ISC",
   "homepage": "http://tomsoderlund.github.io/design-profile-generator",
   "scripts": {
