@@ -4,10 +4,12 @@ import { getSessionValue, setSessionValue } from 'simple-browser-session'
 import packageJson from '../../package.json'
 import './App.css'
 
+import useProfile from '../lib/useProfile'
+
 import Inputs from './Inputs'
 import Preview from './Preview'
 import OutputCSS from './OutputCSS'
-import useProfile from '../lib/useProfile'
+import SocialSharing from './SocialSharing'
 
 function App () {
   const savedProfile = getSessionValue('profile', {}, { useHash: false })
@@ -20,6 +22,7 @@ function App () {
 
   return (
     <main className='App'>
+      <SocialSharing />
       <h1>Design Profile Generator v{packageJson.version}</h1>
       <div className='Panels'>
         <Inputs profile={profile} setProfile={setProfileAndSession} />
@@ -27,7 +30,7 @@ function App () {
         <OutputCSS profile={profile} />
       </div>
       <p>
-        Made by <a target='_blank' rel='noopener noreferrer' href='https://twitter.com/tomsoderlund'>@tomsoderlund</a>. Get the <a target='_blank' href='https://github.com/tomsoderlund/design-profile-generator'>source code on GitHub</a>.
+        Made by <a target='_blank' rel='noopener noreferrer' href='https://twitter.com/tomsoderlund'>@tomsoderlund</a>. Get the <a target='_blank' rel='noopener noreferrer' href='https://github.com/tomsoderlund/design-profile-generator'>source code on GitHub</a>.
       </p>
     </main>
   )
