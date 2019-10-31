@@ -120,7 +120,7 @@ const inputCategories = [
 
 const SmartInput = (props) => props.type === 'select'
   ? <SelectDropdown {...props} style={{ width: '8em' }} />
-  : <input {...props} />
+  : <input {...props} value={props.value || (props.type === 'color' ? '#ffffff' : '')} />
 
 export default ({ profile, setProfile }) => {
   const handleChange = (fieldName, event) => {
