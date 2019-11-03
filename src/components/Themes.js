@@ -3,16 +3,24 @@ import styled from 'styled-components'
 
 import GoogleFontLink from './GoogleFontLink'
 import themes from '../config/themes.json'
+import randomizeProfile from '../lib/randomizeProfile'
 
 export default ({ setProfile }) => {
   const onSelectTheme = useCallback(index => {
     setProfile(themes[index].profile)
   }, [setProfile])
 
+  const onRandomizeTheme = useCallback(() => {
+    setProfile(randomizeProfile())
+  }, [setProfile])
+
   return (
     <div>
       <h2>Themes</h2>
       <div>
+        <ThemeButton className='random' onClick={event => onRandomizeTheme()}>
+          Random
+        </ThemeButton>
         {themes.map((theme, index) => (
           <ThemeButton key={theme.name} title={theme.description} onClick={event => onSelectTheme(index)} {...theme.profile}>
             {theme.name}
@@ -47,5 +55,10 @@ const ThemeButton = styled.button`
 
   &:hover {
     border: 2px solid rgba(0,0,0, 0.4);
+  }
+
+  &.random {
+    background-image: linear-gradient(135deg, yellow 25%, lightgray 25%, lightgray 50%, yellow 50%, yellow 75%, lightgray 75%, lightgray 100%);
+    background-size: 28.28px 28.28px;
   }
 `

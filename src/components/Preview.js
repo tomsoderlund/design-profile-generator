@@ -34,6 +34,11 @@ const PreviewBox = styled.div`
   margin: auto;
   margin-top: 1em;
   text-align: left;
+  // transition: all 0.5s;
+
+  * {
+    // transition: all 0.5s;
+  }
 
   @media only screen and (max-width: 480px) {
     width: 90%;
