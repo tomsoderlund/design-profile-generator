@@ -148,12 +148,14 @@ export const headlinesProps = {
   ]
 }
 
+/*
 const allInputCategories = [
   keyColorProps,
   warningInfoColorProps,
   textProps,
   headlinesProps
 ]
+*/
 
 const SmartInput = (props) => {
   const { inputType, ...propsWithoutInputType } = props
@@ -202,8 +204,10 @@ export default ({ profile, setProfile }) => {
   return (
     <DivLeft>
       <Themes setProfile={setProfile} />
+      {/*
       <h2>Details</h2>
       <CategoriesAndInputs categories={allInputCategories} profile={profile} setProfile={setProfile} />
+    */}
       <GoogleFontLink family={profile.textFont} />
       <GoogleFontLink family={profile.headlineFont} />
     </DivLeft>
