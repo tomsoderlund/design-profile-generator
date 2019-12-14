@@ -26,7 +26,7 @@ function App () {
       <h1>Design Profile Generator v{packageJson.version}</h1>
       <div className='Panels'>
         <Inputs profile={profile} setProfile={setProfileAndSession} />
-        <Preview profile={profile} />
+        <Preview profile={profile} setProfile={setProfileAndSession} />
         <OutputCSS profile={profile} />
       </div>
       <p>

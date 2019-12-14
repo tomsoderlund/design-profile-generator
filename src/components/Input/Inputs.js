@@ -48,109 +48,124 @@ const inputTypes = {
   }
 }
 
-const allColorProps = {
-  title: 'Colors',
+export const backgroundColor = {
+  name: 'backgroundColor',
+  label: 'Background',
+  inputType: 'color'
+}
+
+export const actionColor = {
+  name: 'actionColor',
+  label: 'Action/Primary',
+  inputType: 'color'
+}
+
+export const headerColor = {
+  name: 'headerColor',
+  label: 'Header/Secondary',
+  inputType: 'color'
+}
+
+export const keyColorProps = {
+  title: 'Key Colors',
+  fields: [
+    backgroundColor,
+    actionColor,
+    headerColor
+  ]
+}
+
+export const warningInfoColorProps = {
+  title: 'Warning/Info Colors',
   fields: [
     {
-      name: 'backgroundColor',
-      title: 'Background',
-      input: 'color'
-    },
-    {
-      name: 'actionColor',
-      title: 'Action/Primary',
-      input: 'color'
-    },
-    {
-      name: 'headerColor',
-      title: 'Header/Secondary',
-      input: 'color'
-    },
-    {
-      name: 'textColor',
-      title: 'Text',
-      input: 'color'
-    },
-    {
-      name: 'headlineColor',
-      title: 'Headlines',
-      input: 'color'
-    },
-    {
       name: 'warningColor',
-      title: 'Warning',
-      input: 'color'
+      label: 'Warning',
+      inputType: 'color'
     },
     {
       name: 'informationColor',
-      title: 'Information',
-      input: 'color'
+      label: 'Information',
+      inputType: 'color'
     }
   ]
 }
 
-const textProps = {
+export const textProps = {
   title: 'Text',
   fields: [
     {
       name: 'textFont',
-      title: 'Typeface',
-      input: 'font-family'
+      label: 'Typeface',
+      inputType: 'font-family'
+    },
+    {
+      name: 'textColor',
+      label: 'Color',
+      inputType: 'color'
     },
     {
       name: 'textSize',
-      title: 'Size',
-      input: 'font-size'
+      label: 'Size',
+      inputType: 'font-size'
     },
     {
       name: 'textWeight',
-      title: 'Weight',
-      input: 'font-weight'
+      label: 'Weight',
+      inputType: 'font-weight'
     }
   ]
 }
 
-const headlinesProps = {
+export const headlinesProps = {
   title: 'Headlines',
   fields: [
     {
       name: 'headlineFont',
-      title: 'Typeface',
-      input: 'font-family'
+      label: 'Typeface',
+      inputType: 'font-family'
+    },
+    {
+      name: 'headlineColor',
+      label: 'Color',
+      inputType: 'color'
     },
     {
       name: 'headlineWeight',
-      title: 'Weight',
-      input: 'font-weight'
+      label: 'Weight',
+      inputType: 'font-weight'
     },
     {
       name: 'headlineItalic',
-      title: 'Italic',
-      input: 'boolean'
+      label: 'Italic',
+      inputType: 'boolean'
     },
     {
       name: 'headlineUppercase',
-      title: 'Uppercase',
-      input: 'boolean'
+      label: 'Uppercase',
+      inputType: 'boolean'
     }
   ]
 }
 
 const allInputCategories = [
-  allColorProps,
+  keyColorProps,
+  warningInfoColorProps,
   textProps,
   headlinesProps
 ]
 
 const SmartInput = (props) => {
-  const inputType = inputTypes[props.input]
-  return inputType.type === 'select'
-    ? <SelectDropdown {...inputType} {...props} style={{ width: '8em' }} />
-    : <input {...inputType} {...props} value={props.value || (props.type === 'color' ? '#ffffff' : '')} />
+  const { inputType, ...propsWithoutInputType } = props
+  const inputTypeObj = inputTypes[inputType]
+  return inputTypeObj.type === 'select'
+    ? <SelectDropdown {...inputTypeObj} {...propsWithoutInputType} style={{ width: '8em', maxWidth: '100%' }} />
+    : <input type={inputTypeObj.type} {...propsWithoutInputType} value={props.value || (props.type === 'color' ? '#ffffff' : '')} />
 }
 
-const CategoriesAndInputs = ({ categories, profile, setProfile }) => {
+export const InputFieldList = ({ fields, profile, setProfile }) => {
   const handleChange = (fieldName, event) => {
+    console.log('handleChange:', fieldName, event.target)
     const newValue = Object.prototype.hasOwnProperty.call(event.target, 'checked')
       ? event.target.checked
       : event.target.value
@@ -161,17 +176,23 @@ const CategoriesAndInputs = ({ categories, profile, setProfile }) => {
   }
 
   return (
+    fields.map(field => (
+      <p key={field.name}>
+        <label>
+          {field.label}:{' '}
+          <SmartInput inputType={field.inputType} value={profile[field.name]} onChange={event => handleChange(field.name, event)} />
+        </label>
+      </p>
+    ))
+  )
+}
+
+export const CategoriesAndInputs = ({ categories, profile, setProfile }) => {
+  return (
     categories.map(category => (
       <div key={category.title}>
         <h3>{category.title}</h3>
-        {category.fields.map(field => (
-          <p key={field.name}>
-            <label>
-              {field.title}:{' '}
-              <SmartInput input={field.input} value={profile[field.name]} onChange={event => handleChange(field.name, event)} />
-            </label>
-          </p>
-        ))}
+        {<InputFieldList fields={category.fields} profile={profile} setProfile={setProfile} />}
       </div>
     ))
   )

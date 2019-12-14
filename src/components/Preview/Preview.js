@@ -3,25 +3,44 @@ import styled from 'styled-components'
 
 import generateCSS from '../../lib/generateCSS'
 import HamburgerMenu from './HamburgerMenu'
+import HoverEditPanel from '../Input/HoverEditPanel'
+import { CategoriesAndInputs, InputFieldList, headlinesProps, textProps, warningInfoColorProps, headerColor, actionColor } from '../Input/Inputs'
 
-export default ({ profile }) => (
+export default ({ profile, setProfile }) => (
   <PreviewBox {...profile} className='body'>
-    <nav>
-      <HamburgerMenu profile={profile} />
-      <span>Header</span>
-    </nav>
+    <HoverEditPanel editChildren={<InputFieldList fields={[headerColor]} profile={profile} setProfile={setProfile} />}>
+      <nav>
+        <HamburgerMenu profile={profile} />
+        <span>Header</span>
+      </nav>
+    </HoverEditPanel>
     <main>
-      <h1>This is a headline</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href='./'>Nam a nunc</a>. In ante metus, gravida vel, bibendum et, mollis vitae, ipsum.
+      <HoverEditPanel editChildren={<CategoriesAndInputs categories={[headlinesProps]} profile={profile} setProfile={setProfile} />}>
+        <h1>This is a headline</h1>
+      </HoverEditPanel>
+      <p>
+        <HoverEditPanel editChildren={<CategoriesAndInputs categories={[textProps]} profile={profile} setProfile={setProfile} />}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </HoverEditPanel>
         {' '}
-        <span className='color-warning-bg'>This is a warning</span>, but <span className='color-information-bg'>this is just information</span>.
+        <a href='./'>Nam a nunc</a>.
+        In ante metus, gravida vel, bibendum et, mollis vitae, ipsum.
+        {' '}
+        <HoverEditPanel editChildren={<CategoriesAndInputs categories={[warningInfoColorProps]} profile={profile} setProfile={setProfile} />}>
+          <span className='color-warning-bg'>This is a warning</span>,
+          but <span className='color-information-bg'>this is just information</span>.
+        </HoverEditPanel>
       </p>
       <p>
         <input type='text' placeholder='Input' />
       </p>
       <p>
-        <button className='primary'>Primary</button>
-        <button>Secondary</button>
+        <HoverEditPanel editChildren={<InputFieldList fields={[actionColor]} profile={profile} setProfile={setProfile} />}>
+          <button className='primary'>Primary</button>
+        </HoverEditPanel>
+        <HoverEditPanel editChildren={<InputFieldList fields={[headerColor]} profile={profile} setProfile={setProfile} />}>
+          <button>Secondary</button>
+        </HoverEditPanel>
       </p>
     </main>
   </PreviewBox>
