@@ -11,7 +11,7 @@ import {
   EmailIcon
 } from 'react-share'
 
-const SocialSharingSet = ({ link, title, body, styles }) => (
+const SocialSharingSet = ({ link, title, body, styles = { cursor: 'pointer', display: 'inline-block', marginLeft: '0.3em' } }) => (
   <>
     <TwitterShareButton title={body} url={link} style={styles}><TwitterIcon round size={32} /></TwitterShareButton>
     <FacebookShareButton url={link} style={styles}><FacebookIcon round size={32} /></FacebookShareButton>
@@ -27,7 +27,6 @@ export default () => (
       link='https://tomsoderlund.github.io/design-profile-generator/'
       title='Design Profile Generator'
       body='Check out Design Profile Generator – Quickly generate a graphic design profile (as CSS):'
-      styles={{ cursor: 'pointer', display: 'inline-block', marginLeft: '0.3em' }}
     />
   </SocialSharingBox>
 )
