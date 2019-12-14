@@ -6,9 +6,9 @@ import './App.css'
 
 import useProfile from '../lib/useProfile'
 
-import Inputs from './Inputs'
-import Preview from './Preview'
-import OutputCSS from './OutputCSS'
+import Inputs from './Input/Inputs'
+import Preview from './Preview/Preview'
+import OutputCSS from './Output/OutputCSS'
 import SocialSharing from './SocialSharing'
 
 function App () {

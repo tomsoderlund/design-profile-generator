@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
 
-import generateCSS from '../lib/generateCSS'
+import generateCSS from '../../lib/generateCSS'
 
 export default ({ profile }) => {
   const outputElement = useRef(null)

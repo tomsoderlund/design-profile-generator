@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
 
-import GoogleFontLink from './GoogleFontLink'
-import themes from '../config/themes.json'
-import randomizeProfile from '../lib/randomizeProfile'
+import GoogleFontLink from '../GoogleFontLink'
+import themes from '../../config/themes.json'
+import randomizeProfile from '../../lib/randomizeProfile'
 
 export default ({ setProfile }) => {
   const onSelectTheme = useCallback(index => {

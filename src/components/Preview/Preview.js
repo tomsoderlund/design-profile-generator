@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import generateCSS from '../lib/generateCSS'
+import generateCSS from '../../lib/generateCSS'
 import HamburgerMenu from './HamburgerMenu'
 
 export default ({ profile }) => (

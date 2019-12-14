@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 import SelectDropdown from './SelectDropdown'
-import GoogleFontLink from './GoogleFontLink'
+import GoogleFontLink from '../GoogleFontLink'
 import Themes from './Themes'
-import googleFonts from '../config/googleFonts'
-import selectedFonts from '../config/selectedFonts'
+import googleFonts from '../../config/googleFonts'
+import selectedFonts from '../../config/selectedFonts'
 
 const shortFontCategory = category => category.replace('-serif', '').replace('monospace', 'mono')
 
