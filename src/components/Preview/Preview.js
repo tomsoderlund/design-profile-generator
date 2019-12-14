@@ -63,5 +63,5 @@ const PreviewBox = styled.div`
     width: 90%;
   }
 
-  ${profile => generateCSS(profile, '&')}
+  ${profile => generateCSS(profile, '&', { preview: true })}
 `

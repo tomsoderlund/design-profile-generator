@@ -24,6 +24,7 @@ function App () {
     <main className='App'>
       <SocialSharing />
       <h1>Design Profile Generator v{packageJson.version}</h1>
+      <p>Hover over different areas below to change style properties.</p>
       <div className='Panels'>
         <Inputs profile={profile} setProfile={setProfileAndSession} />
         <Preview profile={profile} setProfile={setProfileAndSession} />

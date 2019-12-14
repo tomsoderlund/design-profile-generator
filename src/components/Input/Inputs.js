@@ -100,11 +100,6 @@ export const textProps = {
       inputType: 'font-family'
     },
     {
-      name: 'textColor',
-      label: 'Color',
-      inputType: 'color'
-    },
-    {
       name: 'textSize',
       label: 'Size',
       inputType: 'font-size'
@@ -113,6 +108,11 @@ export const textProps = {
       name: 'textWeight',
       label: 'Weight',
       inputType: 'font-weight'
+    },
+    {
+      name: 'textColor',
+      label: 'Color',
+      inputType: 'color'
     }
   ]
 }
@@ -126,11 +126,6 @@ export const headlinesProps = {
       inputType: 'font-family'
     },
     {
-      name: 'headlineColor',
-      label: 'Color',
-      inputType: 'color'
-    },
-    {
       name: 'headlineWeight',
       label: 'Weight',
       inputType: 'font-weight'
@@ -139,6 +134,11 @@ export const headlinesProps = {
       name: 'headlineItalic',
       label: 'Italic',
       inputType: 'boolean'
+    },
+    {
+      name: 'headlineColor',
+      label: 'Color',
+      inputType: 'color'
     },
     {
       name: 'headlineUppercase',
@@ -161,7 +161,7 @@ const SmartInput = (props) => {
   const { inputType, ...propsWithoutInputType } = props
   const inputTypeObj = inputTypes[inputType]
   return inputTypeObj.type === 'select'
-    ? <SelectDropdown {...inputTypeObj} {...propsWithoutInputType} style={{ width: '8em', maxWidth: '100%' }} />
+    ? <SelectDropdown {...inputTypeObj} {...propsWithoutInputType} style={{ width: '6rem' }} />
     : <input type={inputTypeObj.type} {...propsWithoutInputType} value={props.value || (props.type === 'color' ? '#ffffff' : '')} />
 }
 
@@ -178,12 +178,12 @@ export const InputFieldList = ({ fields, profile, setProfile }) => {
 
   return (
     fields.map(field => (
-      <p key={field.name}>
+      <SpanDiv key={field.name}>
         <label>
           {field.label}:{' '}
           <SmartInput inputType={field.inputType} value={profile[field.name]} onChange={event => handleChange(field.name, event)} />
         </label>
-      </p>
+      </SpanDiv>
     ))
   )
 }
@@ -191,10 +191,10 @@ export const InputFieldList = ({ fields, profile, setProfile }) => {
 export const CategoriesAndInputs = ({ categories, profile, setProfile }) => {
   return (
     categories.map(category => (
-      <div key={category.title}>
-        <h3>{category.title}</h3>
+      <SpanDiv key={category.title}>
+        <SpanH3>{category.title}</SpanH3>
         {<InputFieldList fields={category.fields} profile={profile} setProfile={setProfile} />}
-      </div>
+      </SpanDiv>
     ))
   )
 }
@@ -221,4 +221,13 @@ const DivLeft = styled.div`
   p {
     margin: 0.4em 0;
   }
+`
+
+const SpanDiv = styled.span`
+  display: block;
+  margin: 0.7em 0;
+`
+
+const SpanH3 = styled.span`
+  font-weight: bold;
 `
