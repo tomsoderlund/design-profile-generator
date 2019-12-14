@@ -167,7 +167,6 @@ const SmartInput = (props) => {
 
 export const InputFieldList = ({ fields, profile, setProfile }) => {
   const handleChange = (fieldName, event) => {
-    console.log('handleChange:', fieldName, event.target)
     const newValue = Object.prototype.hasOwnProperty.call(event.target, 'checked')
       ? event.target.checked
       : event.target.value
