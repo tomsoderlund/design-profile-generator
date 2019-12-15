@@ -31,7 +31,9 @@ const EditPanel = styled.span`
   font-size: 0.9rem;
 
   &.hidden {
-    display: none;
+    // display: none;
+    pointer-events: none;
+    opacity: 0;
   }
 
   h3 {
