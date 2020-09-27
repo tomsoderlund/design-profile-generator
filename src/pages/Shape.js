@@ -1,9 +1,9 @@
 import Page from '../components/page/Page'
 
-const ShapePage = ({ prop }) => {
+const ShapePage = () => {
   return (
     <Page>
-      ShapePage!
+      Shape
     </Page>
   )
 }

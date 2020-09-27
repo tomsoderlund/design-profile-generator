@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = ({ prop }) => {
+const Footer = () => {
   return (
     <footer
       className='color-header-bg color-background-fg'

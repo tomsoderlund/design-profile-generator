@@ -1,9 +1,9 @@
 import Page from '../components/page/Page'
 
-const TypePage = ({ prop }) => {
+const TypePage = () => {
   return (
     <Page>
-      TypePage!
+      Type
     </Page>
   )
 }

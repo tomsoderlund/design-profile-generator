@@ -1,9 +1,9 @@
 import Page from '../components/page/Page'
 
-const StartPage = ({ prop }) => {
+const StartPage = () => {
   return (
     <Page>
-      StartPage!
+      Start
     </Page>
   )
 }

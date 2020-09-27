@@ -1,9 +1,9 @@
 import Page from '../components/page/Page'
 
-const ColorPage = ({ prop }) => {
+const ColorPage = () => {
   return (
     <Page>
-      ColorPage!
+      Color
     </Page>
   )
 }
