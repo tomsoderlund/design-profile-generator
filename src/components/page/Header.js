@@ -21,8 +21,8 @@ export default ({ title = config.appName, children }) => {
   }
 
   useEffect(() => {
-    setCurrentMenu(titleCase(window.location.pathname.slice(1)))
-  }, [window.location.pathname])
+    if (typeof window !== 'undefined') setCurrentMenu(titleCase(window.location.pathname.slice(1)))
+  }, [])
 
   return (
     <header
