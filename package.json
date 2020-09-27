@@ -1,0 +1,33 @@
+{
+  "name": "design-profile-generator",
+  "description": "Quickly generate a graphic design profile (as CSS)",
+  "version": "4.0.0",
+  "license": "ISC",
+  "homepage": "http://tomsoderlund.github.io/design-profile-generator",
+  "scripts": {
+    "dev": "PORT=3113 preact watch",
+    "build": "preact build",
+    "serve": "sirv build --port 3113 --cors --single",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
+  },
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "dependencies": {
+    "preact": "^10.1.0",
+    "preact-cli": "3.0.1",
+    "preact-helmet": "^4.0.0-alpha-3",
+    "preact-render-to-string": "^5.1.2",
+    "preact-router": "^3.2.1",
+    "react-zeroconfig-components": "^1.8.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-synacor": "^3.0.4",
+    "sirv-cli": "^1.0.3",
+    "standard": "^14.3.4"
+  }
+}

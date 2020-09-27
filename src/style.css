@@ -1,0 +1,8 @@
+html, body {
+	font: 14px/1.21 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 400;
+}
+
+h1 {
+	text-align: center;
+}
