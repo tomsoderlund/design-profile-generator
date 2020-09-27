@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks'
+import { useState, useEffect } from 'preact/hooks'
 import { Router, route } from 'preact-router'
 import { TabMenu } from 'react-zeroconfig-components'
 import '../../../node_modules/react-zeroconfig-components/dist/TabMenu.css'
@@ -14,11 +14,15 @@ const menuOptions = [
 const titleCase = str => str.replace(/(?:^|\s|[-"'([{])+\S/g, (c) => c.toUpperCase())
 
 export default ({ title = config.appName, children }) => {
-  const [currentMenu, setCurrentMenu] = useState(titleCase(window.location.pathname.slice(1)))
+  const [currentMenu, setCurrentMenu] = useState()
 
   const navigateTo = (menuOption) => {
     route(`/${menuOption.toLowerCase()}`)
   }
+
+  useEffect(() => {
+    setCurrentMenu(titleCase(window.location.pathname.slice(1)))
+  }, [window.location.pathname])
 
   return (
     <header
