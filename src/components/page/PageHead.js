@@ -2,11 +2,17 @@ import Helmet from 'preact-helmet'
 
 import { config } from '../../../config/config'
 
-const PageHead = ({ title, appInTitle = true, description = config.appDescription }) => {
+const PageHead = ({ title, appInTitle = true, description }) => {
   const { appName, appTagline, appUrl, locale, thumbnailUrl } = config
+
   const pageTitle = title
     ? title + (appInTitle ? ` – ${appName}` : '')
     : `${appName} – ${appTagline}`
+
+  const pageDescription = description || config.appDescription
+
+  // SEO: title 60 characters, description 160 characters
+  // if (typeof window !== 'undefined') console.log('PageHead (dev):', [60 - pageTitle.length, 160 - pageDescription.length, pageTitle, pageDescription])
 
   const fonts = []
 
@@ -18,13 +24,13 @@ const PageHead = ({ title, appInTitle = true, description = config.appDescriptio
     <Helmet
       title={pageTitle}
       meta={[
-        { name: 'description', content: description },
+        { name: 'description', content: pageDescription },
         { charSet: 'utf-8' },
         { httpEquiv: 'content-language', content: locale.split('_')[0] },
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' },
         { property: 'og:site_name', content: appName },
         { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: description },
+        { property: 'og:description', content: pageDescription },
         { property: 'og:locale', content: locale },
         { property: 'og:image', content: pageThumbnailUrl },
         { property: 'og:url', content: websiteUrl },

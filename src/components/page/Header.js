@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'preact/hooks'
-import { Router, route } from 'preact-router'
+import { route } from 'preact-router'
 import { TabMenu } from 'react-zeroconfig-components'
 import '../../../node_modules/react-zeroconfig-components/dist/TabMenu.css'
 

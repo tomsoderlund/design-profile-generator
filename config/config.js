@@ -9,10 +9,10 @@ const completeConfig = {
   default: {
     serverPort,
     appSlug,
-    appUrl: process.env.APP_URL || 'https://www.amazingstartup.guide/',
+    appUrl: process.env.APP_URL || 'https://www.designprofilegenerator.com/',
     appName: manifest.name,
-    appTagline: manifest.tagline,
     appDescription: manifest.description,
+    appTagline: 'Quickly make a design profile',
     features: [
       {
         name: 'Validate your business ideas',

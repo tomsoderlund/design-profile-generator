@@ -8,7 +8,9 @@
     "dev": "PORT=3113 preact watch",
     "build": "preact build",
     "serve": "sirv build --port 3113 --cors --single",
-    "lint": "eslint src"
+    "eslint": "eslint src",
+    "lint": "standard",
+    "fix": "standard --fix"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"
