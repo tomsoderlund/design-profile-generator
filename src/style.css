@@ -3,6 +3,16 @@ html, body {
 	font-weight: 400;
 }
 
+header, footer {
+  background-color: unset;
+  color: black;
+  padding: 1em;
+}
+
+main {
+  min-height: unset;
+}
+
 h1 {
 	text-align: center;
 }
@@ -26,4 +36,14 @@ h1 {
   padding: 3em;
   border: 1px solid lightgray;
   border-radius: 1em;
+}
+
+.code-box textarea {
+  width: 30em;
+  height: 10em;
+}
+
+input[type="color"] {
+  height: 3em;
+  width: 3em;
 }

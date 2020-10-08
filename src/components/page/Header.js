@@ -25,9 +25,7 @@ export default ({ title = config.appName, children }) => {
   }, [])
 
   return (
-    <header
-      className='header color-header-bg color-background-fg'
-    >
+    <header>
       <TabMenu
         options={menuOptions}
         value={currentMenu}

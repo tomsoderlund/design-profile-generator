@@ -25,7 +25,8 @@
     "preact-helmet": "^4.0.0-alpha-3",
     "preact-render-to-string": "^5.1.2",
     "preact-router": "^3.2.1",
-    "react-zeroconfig-components": "^1.8.6"
+    "react-zeroconfig-components": "^1.8.6",
+    "tinycolor2": "^1.4.2"
   },
   "devDependencies": {
     "eslint": "^6.0.1",

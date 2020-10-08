@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import tinycolor from 'tinycolor2'
 
 import Page from '../components/page/Page'
 
-import SliderInput from '../components/input/SliderInput'
+import SmartInput from '../components/input/SmartInput'
 
 const inputMetadata = {
+  backgroundColor: { type: 'color' },
+  borderRadius: { min: 0, max: 2, step: 0.1 }
   // dropShadowY: { min: -3.0 },
   // dropShadowAlpha: { max: 1.0 },
   // shineOpacity: { max: 1.0 },
@@ -24,10 +27,14 @@ const guessFormat = (value) => {
   return '?'
 }
 
+const kebabCase = (str) => str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase()
+
 const get = (obj, key, defaultValue) => (obj && Object.prototype.hasOwnProperty.call(obj, key)) ? obj[key] : defaultValue
 
 const ShapePage = () => {
   const [inputs, setInputs] = useState({
+    backgroundColor: '#ddaadd',
+
     borderRadius: '0.5em',
 
     shineOpacity: 0.5,
@@ -35,6 +42,7 @@ const ShapePage = () => {
 
     dropShadowY: '0.2em',
     dropShadowBlur: '0.125em',
+    dropShadowSpread: '0em',
     dropShadowAlpha: 0.3
   })
 
@@ -45,11 +53,10 @@ const ShapePage = () => {
 
   const buttonStyle = {
     borderRadius: inputs.borderRadius,
-    boxShadow: `0 ${inputs.dropShadowY} ${inputs.dropShadowBlur} rgba(0, 0, 0, ${inputs.dropShadowAlpha})`,
-    background: `linear-gradient(180deg, rgba(255,255,255, ${inputs.shineOpacity}) 0%, rgba(255,255,255, 0) ${inputs.shineStop}), blue`
+    boxShadow: `0 ${inputs.dropShadowY} ${inputs.dropShadowBlur} ${inputs.dropShadowSpread} rgba(0, 0, 0, ${inputs.dropShadowAlpha})`,
+    background: `linear-gradient(180deg, rgba(255,255,255, ${inputs.shineOpacity}) 0%, rgba(255,255,255, 0) ${inputs.shineStop}), ${inputs.backgroundColor}`,
+    color: tinycolor(inputs.backgroundColor).getBrightness() > 128 ? 'black' : 'white'
   }
-
-  console.log('buttonStyle:', buttonStyle)
 
   return (
     <Page>
@@ -62,8 +69,9 @@ const ShapePage = () => {
           {Object.keys(inputs).map((propertyKey, index) => {
             const format = get(inputMetadata[propertyKey], 'format', guessFormat(inputs[propertyKey]))
             return (
-              <SliderInput
+              <SmartInput
                 key={index}
+                type={get(inputMetadata[propertyKey], 'type')}
                 name={propertyKey}
                 label={propertyKey}
                 format={format}
@@ -75,6 +83,12 @@ const ShapePage = () => {
               />
             )
           })}
+        </div>
+
+        <div className='code-box'>
+          <textarea readOnly>
+            {Object.keys(buttonStyle).map((propertyName, index) => `${kebabCase(propertyName)}: ${buttonStyle[propertyName]};\n`)}
+          </textarea>
         </div>
       </main>
     </Page>

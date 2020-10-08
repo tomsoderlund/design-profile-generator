@@ -2,9 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer
-      className='color-header-bg color-background-fg'
-    >
+    <footer>
       {/*
       <Link href='/about'><a>About & Docs</a></Link>
       {' | '}

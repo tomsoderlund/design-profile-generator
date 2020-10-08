@@ -2,7 +2,7 @@ import React from 'react'
 
 const NUMBER_PLACEHOLDER = '?'
 
-const SliderInput = ({ name, label, format = NUMBER_PLACEHOLDER, min = 0, max = 100, step = 0.1, value, onChange }) => {
+const SliderInput = ({ name, format = NUMBER_PLACEHOLDER, min = 0, max = 100, step = 0.1, value, onChange }) => {
   const formatAsStr = (format + '')
 
   const handleSliderChange = ({ target }) => {
@@ -12,8 +12,7 @@ const SliderInput = ({ name, label, format = NUMBER_PLACEHOLDER, min = 0, max = 
   const removeFormatting = (valueStr) => (valueStr + '').replace(formatAsStr.split(NUMBER_PLACEHOLDER)[0], '').replace(formatAsStr.split(NUMBER_PLACEHOLDER)[1], '')
 
   return (
-    <div className='center-row'>
-      <label>{label}:</label>
+    <>
       <input
         type='range'
         min={min}
@@ -30,7 +29,7 @@ const SliderInput = ({ name, label, format = NUMBER_PLACEHOLDER, min = 0, max = 
         onChange={onChange}
         style={{ width: '6em', minWidth: 'unset' }}
       />
-    </div>
+    </>
   )
 }
 export default SliderInput
