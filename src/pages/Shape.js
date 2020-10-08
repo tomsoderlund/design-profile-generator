@@ -7,17 +7,13 @@ import SmartInput from '../components/input/SmartInput'
 
 const inputMetadata = {
   backgroundColor: { type: 'color' },
-  borderRadius: { min: 0, max: 2, step: 0.1 }
-  // dropShadowY: { min: -3.0 },
-  // dropShadowAlpha: { max: 1.0 },
-  // shineOpacity: { max: 1.0 },
-  // shineStop: { max: 100, step: 10 }
+  cornerRadius: { min: 0, max: 2, step: 0.1 }
 }
 
 const defaultValuesForFormat = {
   '?em': { min: -3, max: 3, step: 0.1 },
   '?%': { min: 0, max: 100, step: 10 },
-  '?': { min: 0, max: 1, step: 0.05 }
+  '?': { min: 0, max: 1, step: 0.1 }
 }
 
 const guessFormat = (value) => {
@@ -33,17 +29,22 @@ const get = (obj, key, defaultValue) => (obj && Object.prototype.hasOwnProperty.
 
 const ShapePage = () => {
   const [inputs, setInputs] = useState({
-    backgroundColor: '#ddaadd',
+    backgroundColor: '#00ced1',
 
-    borderRadius: '0.5em',
+    cornerRadius: '0.5em',
 
-    shineOpacity: 0.5,
-    shineStop: '100%',
+    roundnessOpacity: 0.5,
+    roundnessStop: '100%',
 
-    dropShadowY: '0.2em',
-    dropShadowBlur: '0.125em',
-    dropShadowSpread: '0em',
-    dropShadowAlpha: 0.3
+    reflectionIntensity: 0.3,
+    reflectionY: '0.2em',
+    reflectionSpread: '0em',
+    reflectionBlur: '0.125em',
+
+    shadowIntensity: 0.3,
+    shadowY: '0.2em',
+    shadowSpread: '0em',
+    shadowBlur: '0.125em'
   })
 
   const handleInputChange = ({ target }) => {
@@ -52,9 +53,12 @@ const ShapePage = () => {
   }
 
   const buttonStyle = {
-    borderRadius: inputs.borderRadius,
-    boxShadow: `0 ${inputs.dropShadowY} ${inputs.dropShadowBlur} ${inputs.dropShadowSpread} rgba(0, 0, 0, ${inputs.dropShadowAlpha})`,
-    background: `linear-gradient(180deg, rgba(255,255,255, ${inputs.shineOpacity}) 0%, rgba(255,255,255, 0) ${inputs.shineStop}), ${inputs.backgroundColor}`,
+    borderRadius: inputs.cornerRadius,
+    boxShadow: [
+      ...(inputs.shadowIntensity > 0 ? [`0 ${inputs.shadowY} ${inputs.shadowBlur} ${inputs.shadowSpread} rgba(0, 0, 0, ${inputs.shadowIntensity})`] : []),
+      ...(inputs.reflectionIntensity > 0 ? [`inset 0 ${inputs.reflectionY} ${inputs.reflectionBlur} ${inputs.reflectionSpread} rgba(255, 255, 255, ${inputs.reflectionIntensity})`] : [])
+    ].join(', '),
+    background: `linear-gradient(180deg, rgba(255,255,255, ${inputs.roundnessOpacity}) 0%, rgba(255,255,255, 0) ${inputs.roundnessStop}), ${inputs.backgroundColor}`,
     color: tinycolor(inputs.backgroundColor).getBrightness() > 128 ? 'black' : 'white'
   }
 
