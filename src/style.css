@@ -40,6 +40,7 @@ h1 {
 
 .code-box textarea {
   width: 30em;
+  max-width: 90%;
   height: 10em;
 }
 

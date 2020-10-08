@@ -7297,9 +7297,9 @@ react-refresh@0.8.3:
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
 react-zeroconfig-components@^1.8.6:
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/react-zeroconfig-components/-/react-zeroconfig-components-1.8.6.tgz#4146998b5925890559e020ebc60bcb33fe2f3d0f"
-  integrity sha512-hOfYl7u9x457Fq2sXoXL4nKBTZ2ljCe5U+iLe6GxoGK1+xV1DzYwLX1AUK14WQkoXisD8dB5NH88aMteU2dgew==
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/react-zeroconfig-components/-/react-zeroconfig-components-1.8.7.tgz#b34c3163ab5fc917d7f3aa3435bbdf244846e402"
+  integrity sha512-/Lmk1psxHtUh4vojslCoa17QDjvWRln9luw1qJ6cYYYBFjAdYRyViam9kqj7xMRnBNXMO9aAiDRAZBc4WWnlTw==
   dependencies:
     react "^16.8.3"
 
