@@ -58,7 +58,10 @@ const ShapePage = () => {
       ...(inputs.shadowIntensity > 0 ? [`0 ${inputs.shadowY} ${inputs.shadowBlur} ${inputs.shadowSpread} rgba(0, 0, 0, ${inputs.shadowIntensity})`] : []),
       ...(inputs.reflectionIntensity > 0 ? [`inset 0 ${inputs.reflectionY} ${inputs.reflectionBlur} ${inputs.reflectionSpread} rgba(255, 255, 255, ${inputs.reflectionIntensity})`] : [])
     ].join(', '),
-    background: `linear-gradient(180deg, rgba(255,255,255, ${inputs.roundnessOpacity}) 0%, rgba(255,255,255, 0) ${inputs.roundnessStop}), ${inputs.backgroundColor}`,
+    background: [
+      ...(inputs.roundnessOpacity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${inputs.roundnessOpacity}) 0%, rgba(255,255,255, 0) ${inputs.roundnessStop})`] : []),
+      inputs.backgroundColor
+    ].join(', '),
     color: tinycolor(inputs.backgroundColor).getBrightness() > 128 ? 'black' : 'white'
   }
 

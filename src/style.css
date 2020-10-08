@@ -38,6 +38,12 @@ h1 {
   border-radius: 1em;
 }
 
+.preview-box button {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
 .code-box textarea {
   width: 30em;
   max-width: 90%;
