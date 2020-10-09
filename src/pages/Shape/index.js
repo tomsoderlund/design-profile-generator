@@ -13,6 +13,10 @@ const ShapePage = () => {
   const [buttonValues, handleButtonValueChange] = useStyles(defaultButtonStyleProperties)
 
   const buttonStyle = {
+    fontSize: buttonValues.textSize,
+
+    padding: buttonValues.padding,
+
     ...(buttonValues.cornersRadius !== '0em' && { borderRadius: buttonValues.cornersRadius }),
 
     ...((buttonValues.shadowIntensity > 0 || buttonValues.reflectionIntensity > 0) && {
@@ -39,6 +43,10 @@ const ShapePage = () => {
   const [inputValues, handleInputValueChange] = useStyles(defaultInputStyleProperties)
 
   const inputStyle = {
+    fontSize: inputValues.textSize,
+
+    padding: inputValues.padding,
+
     ...(inputValues.cornersRadius !== '0em' && { borderRadius: inputValues.cornersRadius }),
 
     ...((inputValues.shadowIntensity > 0 || inputValues.innerShadowIntensity > 0) && {

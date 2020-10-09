@@ -1,6 +1,9 @@
 {
   "colorsBackground":"#ffffff",
 
+  "textSize":"16px",  
+  "padding":"0.6em",
+
   "cornersRadius":"0.5em",
 
   "roundnessIntensity":0,

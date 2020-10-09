@@ -2,6 +2,9 @@
   "colorsBackground":"#00ced1",
   "textContrast":0.8,
 
+  "textSize":"16px",  
+  "padding":"0.6em",
+
   "cornersRadius":"0.5em",
 
   "roundnessIntensity":0.5,
