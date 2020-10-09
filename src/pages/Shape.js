@@ -7,11 +7,13 @@ import SmartInput from '../components/input/SmartInput'
 
 const inputMetadata = {
   backgroundColor: { type: 'color' },
-  cornerRadius: { min: 0, max: 2, step: 0.1 }
+  cornerRadius: { min: 0, max: 2, step: 0.1 },
+  roundnessY: { min: -3 },
+  reflectionY: { min: -3 }
 }
 
 const defaultValuesForFormat = {
-  '?em': { min: -3, max: 3, step: 0.1 },
+  '?em': { min: 0, max: 3, step: 0.1 },
   '?%': { min: 0, max: 100, step: 10 },
   '?': { min: 0, max: 1, step: 0.1 }
 }
@@ -33,17 +35,17 @@ const ShapePage = () => {
 
     cornerRadius: '0.5em',
 
-    roundnessOpacity: 0.5,
-    roundnessStop: '100%',
+    roundnessIntensity: 0.5,
+    roundnessY: '100%',
 
     reflectionIntensity: 0.3,
     reflectionY: '0.2em',
-    reflectionSpread: '0em',
+    reflectionSize: '0em',
     reflectionBlur: '0.125em',
 
     shadowIntensity: 0.3,
     shadowY: '0.2em',
-    shadowSpread: '0em',
+    shadowSize: '0em',
     shadowBlur: '0.125em'
   })
 
@@ -55,11 +57,11 @@ const ShapePage = () => {
   const buttonStyle = {
     borderRadius: inputs.cornerRadius,
     boxShadow: [
-      ...(inputs.shadowIntensity > 0 ? [`0 ${inputs.shadowY} ${inputs.shadowBlur} ${inputs.shadowSpread} rgba(0, 0, 0, ${inputs.shadowIntensity})`] : []),
-      ...(inputs.reflectionIntensity > 0 ? [`inset 0 ${inputs.reflectionY} ${inputs.reflectionBlur} ${inputs.reflectionSpread} rgba(255, 255, 255, ${inputs.reflectionIntensity})`] : [])
+      ...(inputs.shadowIntensity > 0 ? [`0 ${inputs.shadowY} ${inputs.shadowBlur} ${inputs.shadowSize} rgba(0, 0, 0, ${inputs.shadowIntensity})`] : []),
+      ...(inputs.reflectionIntensity > 0 ? [`inset 0 ${inputs.reflectionY} ${inputs.reflectionBlur} ${inputs.reflectionSize} rgba(255, 255, 255, ${inputs.reflectionIntensity})`] : [])
     ].join(', '),
     background: [
-      ...(inputs.roundnessOpacity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${inputs.roundnessOpacity}) 0%, rgba(255,255,255, 0) ${inputs.roundnessStop})`] : []),
+      ...(inputs.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${inputs.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${inputs.roundnessY})`] : []),
       inputs.backgroundColor
     ].join(', '),
     color: tinycolor(inputs.backgroundColor).getBrightness() > 128 ? 'black' : 'white'
@@ -67,7 +69,7 @@ const ShapePage = () => {
 
   return (
     <Page>
-      <main className='center-vertically'>
+      <div className='center-vertically'>
         <div className='preview-box'>
           <button style={buttonStyle}>Button</button>
         </div>
@@ -97,7 +99,7 @@ const ShapePage = () => {
             {Object.keys(buttonStyle).map((propertyName, index) => `${kebabCase(propertyName)}: ${buttonStyle[propertyName]};\n`)}
           </textarea>
         </div>
-      </main>
+      </div>
     </Page>
   )
 }
