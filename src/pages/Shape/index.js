@@ -1,31 +1,27 @@
-import { useState } from 'react'
 import tinycolor from 'tinycolor2'
 
 import defaultButtonStyleProperties from './defaultButtonStyleProperties.json'
 // import buttonStyleSections from './buttonStyleSections.json'
+import useStyles from './useStyles'
 
 import Page from '../components/page/Page'
 import ElementDesigner from './ElementDesigner'
 
 const ShapePage = () => {
-  const [buttonInputs, setButtonInputs] = useState(defaultButtonStyleProperties)
-
-  const handleButtonStyleChange = ({ target }) => {
-    const value = target.type === 'checkbox' ? target.checked : target.value
-    setButtonInputs({ ...buttonInputs, [target.name]: value })
-  }
+  // Button
+  const [buttonValues, handleButtonValueChange] = useStyles(defaultButtonStyleProperties)
 
   const buttonStyle = {
-    borderRadius: buttonInputs.cornersRadius,
+    borderRadius: buttonValues.cornersRadius,
     boxShadow: [
-      ...(buttonInputs.shadowIntensity > 0 ? [`0 ${buttonInputs.shadowY} ${buttonInputs.shadowBlur} ${buttonInputs.shadowSize} rgba(0, 0, 0, ${buttonInputs.shadowIntensity})`] : []),
-      ...(buttonInputs.reflectionIntensity > 0 ? [`inset 0 ${buttonInputs.reflectionY} ${buttonInputs.reflectionBlur} ${buttonInputs.reflectionSize} rgba(255, 255, 255, ${buttonInputs.reflectionIntensity})`] : [])
+      ...(buttonValues.shadowIntensity > 0 ? [`0 ${buttonValues.shadowY} ${buttonValues.shadowBlur} ${buttonValues.shadowSize} rgba(0, 0, 0, ${buttonValues.shadowIntensity})`] : []),
+      ...(buttonValues.reflectionIntensity > 0 ? [`inset 0 ${buttonValues.reflectionY} ${buttonValues.reflectionBlur} ${buttonValues.reflectionSize} rgba(255, 255, 255, ${buttonValues.reflectionIntensity})`] : [])
     ].join(', '),
     background: [
-      ...(buttonInputs.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${buttonInputs.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${buttonInputs.roundnessY})`] : []),
-      buttonInputs.colorsBackground
+      ...(buttonValues.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${buttonValues.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${buttonValues.roundnessY})`] : []),
+      buttonValues.colorsBackground
     ].join(', '),
-    color: tinycolor(buttonInputs.colorsBackground).getBrightness() > 128 ? 'black' : 'white'
+    color: tinycolor(buttonValues.colorsBackground).getBrightness() > 128 ? 'black' : 'white'
   }
 
   return (
@@ -33,16 +29,16 @@ const ShapePage = () => {
       <div className='center-row'>
         <ElementDesigner
           buttonStyle={buttonStyle}
-          inputs={buttonInputs}
-          onChange={handleButtonStyleChange}
+          inputs={buttonValues}
+          onChange={handleButtonValueChange}
         >
           <button style={buttonStyle}>Button</button>
         </ElementDesigner>
 
         <ElementDesigner
           buttonStyle={buttonStyle}
-          inputs={buttonInputs}
-          onChange={handleButtonStyleChange}
+          inputs={buttonValues}
+          onChange={handleButtonValueChange}
         >
           <button style={buttonStyle}>Button</button>
         </ElementDesigner>
