@@ -1,0 +1,19 @@
+{
+  "colorsBackground":"#ffffff",
+
+  "cornersRadius":"0.5em",
+
+  "roundnessIntensity":0,
+  "roundnessY":"50%",
+
+  "innerShadowIntensity":0.3,
+  "innerShadowX":"0.0em",
+  "innerShadowY":"0.2em",
+  "innerShadowSize":"0em",
+  "innerShadowBlur":"0.125em",
+
+  "dropShadowIntensity":0,
+  "dropShadowY":"0.2em",
+  "dropShadowSize":"0em",
+  "dropShadowBlur":"0.125em"
+}

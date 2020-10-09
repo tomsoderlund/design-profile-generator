@@ -35,7 +35,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 @media only screen and (max-width: 480px) {
@@ -48,19 +48,29 @@ h1 {
   margin: 2em 0;
   padding: 3em;
   border: 1px solid lightgray;
-  border-radius: 1em;
+  border-radius: 0.5em;
 }
 
-.preview-box button {
+@media only screen and (max-width: 480px) {
+  .preview-box {
+    padding: 2em;
+  }  
+}
+
+.preview-box > button,
+.preview-box > input {
   background: none;
   box-shadow: none;
   border: none;
 }
 
 .code-box textarea {
-  width: 25em;
+  font-size: 0.9em;
+  width: 25rem;
   max-width: 90%;
-  height: 10em;
+  height: 12em;
+  background: #444;
+  color: #ccc;
 }
 
 input[type="color"] {

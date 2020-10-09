@@ -4,9 +4,9 @@ import { guessFormat, kebabCase, get } from '../../../lib/helpers'
 import inputsMetadata from './inputsMetadata.json'
 import defaultValuesForFormat from './defaultValuesForFormat.json'
 
-import SmartInput from '../components/input/SmartInput'
+import SmartInput from '../../components/input/SmartInput'
 
-const ElementDesigner = ({ children, buttonStyle, inputs, onChange }) => (
+const ElementDesigner = ({ children, style, inputs, onChange }) => (
   <div className='element-designer'>
     <div className='preview-box'>
       {children}
@@ -45,7 +45,7 @@ const ElementDesigner = ({ children, buttonStyle, inputs, onChange }) => (
 
     <div className='code-box'>
       <textarea readOnly>
-        {Object.keys(buttonStyle).map((propertyName, index) => `${kebabCase(propertyName)}: ${buttonStyle[propertyName]};\n`)}
+        {Object.keys(style).map((propertyName, index) => `${kebabCase(propertyName)}: ${style[propertyName]};\n`)}
       </textarea>
     </div>
   </div>
