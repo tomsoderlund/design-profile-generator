@@ -3,10 +3,17 @@ html, body {
 	font-weight: 400;
 }
 
+@media only screen and (max-width: 480px) {
+  body {
+    background-color: white;
+  }  
+}
+
 header, footer {
   background-color: unset;
   color: black;
-  padding: 1em;
+  padding: 0.5em;
+  height: auto;
 }
 
 main {
@@ -53,4 +60,16 @@ h1 {
 input[type="color"] {
   height: 3em;
   width: 3em;
+}
+
+.tab-menu {
+  border: none;
+  font-size: 1.5em;
+}
+
+.tab-menu button,
+.tab-menu button:hover {
+  background-color: white;
+  box-shadow: none;
+  border: 1px solid black;
 }
