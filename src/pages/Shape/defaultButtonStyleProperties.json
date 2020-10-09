@@ -1,0 +1,18 @@
+{
+  "colorsBackground":"#00ced1",
+
+  "cornersRadius":"0.5em",
+
+  "roundnessIntensity":0.5,
+  "roundnessY":"100%",
+
+  "reflectionIntensity":0.3,
+  "reflectionY":"0.2em",
+  "reflectionSize":"0em",
+  "reflectionBlur":"0.125em",
+
+  "shadowIntensity":0.3,
+  "shadowY":"0.2em",
+  "shadowSize":"0em",
+  "shadowBlur":"0.125em"
+}

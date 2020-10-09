@@ -1,0 +1,24 @@
+{
+  "colors":[
+    "colorsBackground"
+  ],
+  "corners":[
+    "cornersRadius"
+  ],
+  "roundness":[
+    "roundnessIntensity",
+    "roundnessY"
+  ],
+  "reflection":[
+    "reflectionIntensity",
+    "reflectionY",
+    "reflectionSize",
+    "reflectionBlur"
+  ],
+  "shadow":[
+    "shadowIntensity",
+    "shadowY",
+    "shadowSize",
+    "shadowBlur"
+  ]
+}

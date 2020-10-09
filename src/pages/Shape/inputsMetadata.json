@@ -1,0 +1,16 @@
+{
+  "colorsBackground":{
+    "type":"color"
+  },
+  "cornersRadius":{
+    "min":0,
+    "max":2,
+    "step":0.1
+  },
+  "roundnessY":{
+    "min":-3
+  },
+  "reflectionY":{
+    "min":-3
+  }
+}
