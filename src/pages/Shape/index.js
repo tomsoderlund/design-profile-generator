@@ -61,7 +61,7 @@ const ShapePage = () => {
 
   return (
     <Page>
-      <div className='center-row'>
+      <div className='center-page'>
         <ElementDesigner
           style={buttonStyle}
           inputs={buttonValues}
