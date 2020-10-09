@@ -5,14 +5,14 @@ import Page from '../components/page/Page'
 
 import SmartInput from '../components/input/SmartInput'
 
-const inputMetadata = {
+const inputsMetadata = {
   colorsBackground: { type: 'color' },
   cornersRadius: { min: 0, max: 2, step: 0.1 },
   roundnessY: { min: -3 },
   reflectionY: { min: -3 }
 }
 
-const styleSections = {
+const buttonStyleSections = {
   colors: ['colorsBackground'],
   corners: ['cornersRadius'],
   roundness: ['roundnessIntensity', 'roundnessY'],
@@ -20,7 +20,7 @@ const styleSections = {
   shadow: ['shadowIntensity', 'shadowY', 'shadowSize', 'shadowBlur']
 }
 
-const defaultStyleProperties = {
+const defaultButtonStyleProperties = {
   colorsBackground: '#00ced1',
 
   cornersRadius: '0.5em',
@@ -57,44 +57,89 @@ const titleCase = str => str.replace(/(?:^|\s|[-"'([{])+\S/g, (c) => c.toUpperCa
 
 const get = (obj, key, defaultValue) => (obj && Object.prototype.hasOwnProperty.call(obj, key)) ? obj[key] : defaultValue
 
-const ShapePage = () => {
-  const [inputs, setInputs] = useState(defaultStyleProperties)
+const ElementDesigner = ({ children, buttonStyle, inputs, onChange }) => (
+  <div className='element-designer'>
+    <div className='preview-box'>
+      {children}
+    </div>
 
-  const handleInputChange = ({ target }) => {
+    {/*
+    <div className='sections-box'>
+      {Object.keys(styleSections).map((sectionName, index) => (
+        <StyleSection
+          key={sectionName}
+          sectionName={sectionName}
+          propertyNames={styleSections[sectionName]}
+        />
+      ))}
+    </div>
+*/}
+    <div className='properties-box'>
+      {Object.keys(inputs).map((propertyKey, index) => {
+        const format = get(inputsMetadata[propertyKey], 'format', guessFormat(inputs[propertyKey]))
+        return (
+          <SmartInput
+            key={propertyKey}
+            type={get(inputsMetadata[propertyKey], 'type')}
+            name={propertyKey}
+            label={propertyKey}
+            format={format}
+            min={get(inputsMetadata[propertyKey], 'min', defaultValuesForFormat[format].min)}
+            max={get(inputsMetadata[propertyKey], 'max', defaultValuesForFormat[format].max)}
+            step={get(inputsMetadata[propertyKey], 'step', defaultValuesForFormat[format].step)}
+            value={inputs[propertyKey]}
+            onChange={onChange}
+          />
+        )
+      })}
+    </div>
+
+    <div className='code-box'>
+      <textarea readOnly>
+        {Object.keys(buttonStyle).map((propertyName, index) => `${kebabCase(propertyName)}: ${buttonStyle[propertyName]};\n`)}
+      </textarea>
+    </div>
+  </div>
+)
+
+const ShapePage = () => {
+  const [buttonInputs, setButtonInputs] = useState(defaultButtonStyleProperties)
+
+  const handleButtonStyleChange = ({ target }) => {
     const value = target.type === 'checkbox' ? target.checked : target.value
-    setInputs({ ...inputs, [target.name]: value })
+    setButtonInputs({ ...buttonInputs, [target.name]: value })
   }
 
   const buttonStyle = {
-    borderRadius: inputs.cornersRadius,
+    borderRadius: buttonInputs.cornersRadius,
     boxShadow: [
-      ...(inputs.shadowIntensity > 0 ? [`0 ${inputs.shadowY} ${inputs.shadowBlur} ${inputs.shadowSize} rgba(0, 0, 0, ${inputs.shadowIntensity})`] : []),
-      ...(inputs.reflectionIntensity > 0 ? [`inset 0 ${inputs.reflectionY} ${inputs.reflectionBlur} ${inputs.reflectionSize} rgba(255, 255, 255, ${inputs.reflectionIntensity})`] : [])
+      ...(buttonInputs.shadowIntensity > 0 ? [`0 ${buttonInputs.shadowY} ${buttonInputs.shadowBlur} ${buttonInputs.shadowSize} rgba(0, 0, 0, ${buttonInputs.shadowIntensity})`] : []),
+      ...(buttonInputs.reflectionIntensity > 0 ? [`inset 0 ${buttonInputs.reflectionY} ${buttonInputs.reflectionBlur} ${buttonInputs.reflectionSize} rgba(255, 255, 255, ${buttonInputs.reflectionIntensity})`] : [])
     ].join(', '),
     background: [
-      ...(inputs.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${inputs.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${inputs.roundnessY})`] : []),
-      inputs.colorsBackground
+      ...(buttonInputs.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${buttonInputs.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${buttonInputs.roundnessY})`] : []),
+      buttonInputs.colorsBackground
     ].join(', '),
-    color: tinycolor(inputs.colorsBackground).getBrightness() > 128 ? 'black' : 'white'
+    color: tinycolor(buttonInputs.colorsBackground).getBrightness() > 128 ? 'black' : 'white'
   }
 
   const StyleSection = ({ sectionName, propertyNames }) => (
     <div>
       <h3>{titleCase(sectionName)}</h3>
       {propertyNames.map((propertyKey, index) => {
-        const format = get(inputMetadata[propertyKey], 'format', guessFormat(inputs[propertyKey]))
+        const format = get(inputsMetadata[propertyKey], 'format', guessFormat(buttonInputs[propertyKey]))
         return (
           <SmartInput
             key={propertyKey}
-            type={get(inputMetadata[propertyKey], 'type')}
+            type={get(inputsMetadata[propertyKey], 'type')}
             name={propertyKey}
             label={propertyKey.replace(sectionName, '')}
             format={format}
-            min={get(inputMetadata[propertyKey], 'min', defaultValuesForFormat[format].min)}
-            max={get(inputMetadata[propertyKey], 'max', defaultValuesForFormat[format].max)}
-            step={get(inputMetadata[propertyKey], 'step', defaultValuesForFormat[format].step)}
-            value={inputs[propertyKey]}
-            onChange={handleInputChange}
+            min={get(inputsMetadata[propertyKey], 'min', defaultValuesForFormat[format].min)}
+            max={get(inputsMetadata[propertyKey], 'max', defaultValuesForFormat[format].max)}
+            step={get(inputsMetadata[propertyKey], 'step', defaultValuesForFormat[format].step)}
+            value={buttonInputs[propertyKey]}
+            onChange={handleButtonStyleChange}
           />
         )
       })}
@@ -103,47 +148,22 @@ const ShapePage = () => {
 
   return (
     <Page>
-      <div className='center-vertically'>
-        <div className='preview-box'>
+      <div className='center-row'>
+        <ElementDesigner
+          buttonStyle={buttonStyle}
+          inputs={buttonInputs}
+          onChange={handleButtonStyleChange}
+        >
           <button style={buttonStyle}>Button</button>
-        </div>
+        </ElementDesigner>
 
-        {/*
-        <div className='sections-box'>
-          {Object.keys(styleSections).map((sectionName, index) => (
-            <StyleSection
-              key={sectionName}
-              sectionName={sectionName}
-              propertyNames={styleSections[sectionName]}
-            />
-          ))}
-        </div>
- */}
-        <div className='properties-box'>
-          {Object.keys(inputs).map((propertyKey, index) => {
-            const format = get(inputMetadata[propertyKey], 'format', guessFormat(inputs[propertyKey]))
-            return (
-              <SmartInput
-                key={propertyKey}
-                type={get(inputMetadata[propertyKey], 'type')}
-                name={propertyKey}
-                label={propertyKey}
-                format={format}
-                min={get(inputMetadata[propertyKey], 'min', defaultValuesForFormat[format].min)}
-                max={get(inputMetadata[propertyKey], 'max', defaultValuesForFormat[format].max)}
-                step={get(inputMetadata[propertyKey], 'step', defaultValuesForFormat[format].step)}
-                value={inputs[propertyKey]}
-                onChange={handleInputChange}
-              />
-            )
-          })}
-        </div>
-
-        <div className='code-box'>
-          <textarea readOnly>
-            {Object.keys(buttonStyle).map((propertyName, index) => `${kebabCase(propertyName)}: ${buttonStyle[propertyName]};\n`)}
-          </textarea>
-        </div>
+        <ElementDesigner
+          buttonStyle={buttonStyle}
+          inputs={buttonInputs}
+          onChange={handleButtonStyleChange}
+        >
+          <button style={buttonStyle}>Button</button>
+        </ElementDesigner>
       </div>
     </Page>
   )
