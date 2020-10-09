@@ -58,10 +58,11 @@ h1 {
 }
 
 .preview-box > button,
-.preview-box > input {
+.preview-box > input:not([type="radio"]):not([type="checkbox"]):not([type="color"]):not([type="range"]), .input, textarea, select {
   background: none;
   box-shadow: none;
   border: none;
+  border-radius: unset;
 }
 
 .code-box textarea {

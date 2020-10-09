@@ -12,8 +12,13 @@
   "innerShadowSize":"0em",
   "innerShadowBlur":"0.125em",
 
-  "dropShadowIntensity":0,
-  "dropShadowY":"0.2em",
-  "dropShadowSize":"0em",
-  "dropShadowBlur":"0.125em"
+  "shadowIntensity":0,
+  "shadowY":"0.2em",
+  "shadowSize":"0em",
+  "shadowBlur":"0.125em",
+
+  "border":"0.1em",
+  "colorsBorder":"#d3d3d3",
+  "borderBottom":"0em",
+  "colorsBorderBottom":"#d3d3d3"
 }

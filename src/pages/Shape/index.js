@@ -13,15 +13,23 @@ const ShapePage = () => {
   const [buttonValues, handleButtonValueChange] = useStyles(defaultButtonStyleProperties)
 
   const buttonStyle = {
-    borderRadius: buttonValues.cornersRadius,
-    boxShadow: [
-      ...(buttonValues.shadowIntensity > 0 ? [`0 ${buttonValues.shadowY} ${buttonValues.shadowBlur} ${buttonValues.shadowSize} rgba(0, 0, 0, ${buttonValues.shadowIntensity})`] : []),
-      ...(buttonValues.reflectionIntensity > 0 ? [`inset 0 ${buttonValues.reflectionY} ${buttonValues.reflectionBlur} ${buttonValues.reflectionSize} rgba(255,255,255, ${buttonValues.reflectionIntensity})`] : [])
-    ].join(', '),
+    ...(buttonValues.cornersRadius !== '0em' && { borderRadius: buttonValues.cornersRadius }),
+
+    ...((buttonValues.shadowIntensity > 0 || buttonValues.reflectionIntensity > 0) && {
+      boxShadow: [
+        ...(buttonValues.shadowIntensity > 0 ? [`0 ${buttonValues.shadowY} ${buttonValues.shadowBlur} ${buttonValues.shadowSize} rgba(0, 0, 0, ${buttonValues.shadowIntensity})`] : []),
+        ...(buttonValues.reflectionIntensity > 0 ? [`inset 0 ${buttonValues.reflectionY} ${buttonValues.reflectionBlur} ${buttonValues.reflectionSize} rgba(255,255,255, ${buttonValues.reflectionIntensity})`] : [])
+      ].join(', ')
+    }),
+
+    ...(buttonValues.border !== '0em' && { border: `${buttonValues.border} solid ${buttonValues.colorsBorder}` }),
+    ...(buttonValues.borderBottom !== '0em' && { borderBottom: `${buttonValues.borderBottom} solid ${buttonValues.colorsBorderBottom}` }),
+
     background: [
       ...(buttonValues.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${buttonValues.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${buttonValues.roundnessY})`] : []),
       buttonValues.colorsBackground
     ].join(', '),
+
     color: tinycolor(buttonValues.colorsBackground).getBrightness() > 128 ? 'black' : 'white'
   }
 
@@ -29,15 +37,23 @@ const ShapePage = () => {
   const [inputValues, handleInputValueChange] = useStyles(defaultInputStyleProperties)
 
   const inputStyle = {
-    borderRadius: inputValues.cornersRadius,
-    boxShadow: [
-      ...(inputValues.dropShadowIntensity > 0 ? [`0 ${inputValues.dropShadowY} ${inputValues.dropShadowBlur} ${inputValues.dropShadowSize} rgba(0, 0, 0, ${inputValues.dropShadowIntensity})`] : []),
-      ...(inputValues.innerShadowIntensity > 0 ? [`inset ${inputValues.innerShadowX} ${inputValues.innerShadowY} ${inputValues.innerShadowBlur} ${inputValues.innerShadowSize} rgba(0,0,0, ${inputValues.innerShadowIntensity})`] : [])
-    ].join(', '),
+    ...(inputValues.cornersRadius !== '0em' && { borderRadius: inputValues.cornersRadius }),
+
+    ...((inputValues.shadowIntensity > 0 || inputValues.innerShadowIntensity > 0) && {
+      boxShadow: [
+        ...(inputValues.shadowIntensity > 0 ? [`0 ${inputValues.shadowY} ${inputValues.shadowBlur} ${inputValues.shadowSize} rgba(0, 0, 0, ${inputValues.shadowIntensity})`] : []),
+        ...(inputValues.innerShadowIntensity > 0 ? [`inset ${inputValues.innerShadowX} ${inputValues.innerShadowY} ${inputValues.innerShadowBlur} ${inputValues.innerShadowSize} rgba(0,0,0, ${inputValues.innerShadowIntensity})`] : [])
+      ].join(', ')
+    }),
+
+    ...(inputValues.border !== '0em' && { border: `${inputValues.border} solid ${inputValues.colorsBorder}` }),
+    ...(inputValues.borderBottom !== '0em' && { borderBottom: `${inputValues.borderBottom} solid ${inputValues.colorsBorderBottom}` }),
+
     background: [
       ...(inputValues.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(0,0,0, ${inputValues.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${inputValues.roundnessY})`] : []),
       inputValues.colorsBackground
     ].join(', '),
+
     color: tinycolor(inputValues.colorsBackground).getBrightness() > 128 ? 'black' : 'white'
   }
 

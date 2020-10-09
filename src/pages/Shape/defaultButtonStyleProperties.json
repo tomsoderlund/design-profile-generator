@@ -14,5 +14,10 @@
   "shadowIntensity":0.3,
   "shadowY":"0.2em",
   "shadowSize":"0em",
-  "shadowBlur":"0.125em"
+  "shadowBlur":"0.125em",
+
+  "border":"0em",
+  "colorsBorder":"#000000",
+  "borderBottom":"0em",
+  "colorsBorderBottom":"#000000"
 }
