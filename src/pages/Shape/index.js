@@ -31,8 +31,8 @@ const ShapePage = () => {
     ].join(', '),
 
     color: buttonValues.textContrast > 0
-      ? tinycolor.mix(tinycolor(buttonValues.colorsBackground), tinycolor('#000'), buttonValues.textContrast * 100)
-      : tinycolor.mix(tinycolor(buttonValues.colorsBackground), tinycolor('#fff'), Math.abs(buttonValues.textContrast) * 100)
+      ? tinycolor.mix(tinycolor(buttonValues.colorsBackground), tinycolor('#000'), buttonValues.textContrast * 100).toHexString()
+      : tinycolor.mix(tinycolor(buttonValues.colorsBackground), tinycolor('#fff'), Math.abs(buttonValues.textContrast) * 100).toHexString()
   }
 
   // Input field
