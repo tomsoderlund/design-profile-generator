@@ -30,7 +30,9 @@ const ShapePage = () => {
       buttonValues.colorsBackground
     ].join(', '),
 
-    color: tinycolor(buttonValues.colorsBackground).getBrightness() > 128 ? 'black' : 'white'
+    color: buttonValues.textContrast > 0
+      ? tinycolor.mix(tinycolor(buttonValues.colorsBackground), tinycolor('#000'), buttonValues.textContrast * 100)
+      : tinycolor.mix(tinycolor(buttonValues.colorsBackground), tinycolor('#fff'), Math.abs(buttonValues.textContrast) * 100)
   }
 
   // Input field
@@ -54,7 +56,7 @@ const ShapePage = () => {
       inputValues.colorsBackground
     ].join(', '),
 
-    color: tinycolor(inputValues.colorsBackground).getBrightness() > 128 ? 'black' : 'white'
+    color: 'black'
   }
 
   return (
