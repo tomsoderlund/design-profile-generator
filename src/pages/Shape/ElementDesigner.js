@@ -1,28 +1,28 @@
 import React from 'react'
 
-import { guessFormat, kebabCase, get } from '../../../lib/helpers'
-import inputsMetadata from './inputsMetadata.json'
-import defaultValuesForFormat from './defaultValuesForFormat.json'
+import { kebabCase } from '../../../lib/helpers'
 
-import SmartInput from '../../components/input/SmartInput'
+import StyleSection from './StyleSection'
 
-const ElementDesigner = ({ children, style, inputs, onChange }) => (
+const ElementDesigner = ({ children, style, styleSections, inputs, onChange }) => (
   <div className='element-designer'>
     <div className='preview-box'>
       {children}
     </div>
 
-    {/*
     <div className='sections-box'>
       {Object.keys(styleSections).map((sectionName, index) => (
         <StyleSection
           key={sectionName}
           sectionName={sectionName}
           propertyNames={styleSections[sectionName]}
+          inputs={inputs}
+          onChange={onChange}
         />
       ))}
     </div>
-*/}
+
+    {/*
     <div className='properties-box'>
       {Object.keys(inputs).map((propertyKey, index) => {
         const format = get(inputsMetadata[propertyKey], 'format', guessFormat(inputs[propertyKey]))
@@ -42,6 +42,7 @@ const ElementDesigner = ({ children, style, inputs, onChange }) => (
         )
       })}
     </div>
+ */}
 
     <div className='code-box'>
       <textarea readOnly>

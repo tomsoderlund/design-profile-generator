@@ -20,8 +20,8 @@
   "shadowSize":"0em",
   "shadowBlur":"0.125em",
 
-  "border":"0.1em",
-  "colorsBorder":"#d3d3d3",
+  "borderAll":"0.1em",
+  "borderColor":"#d3d3d3",
   "borderBottom":"0em",
-  "colorsBorderBottom":"#d3d3d3"
+  "borderBottomColor":"#d3d3d3"
 }

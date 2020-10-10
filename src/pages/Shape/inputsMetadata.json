@@ -2,10 +2,10 @@
   "colorsBackground":{
     "type":"color"
   },
-  "colorsBorder":{
+  "borderColor":{
     "type":"color"
   },
-  "colorsBorderBottom":{
+  "borderBottomColor":{
     "type":"color"
   },
   "cornersRadius":{

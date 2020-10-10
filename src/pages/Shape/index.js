@@ -1,8 +1,9 @@
 import tinycolor from 'tinycolor2'
 
 import defaultButtonStyleProperties from './defaultButtonStyleProperties.json'
+import buttonStyleSections from './buttonStyleSections.json'
 import defaultInputStyleProperties from './defaultInputStyleProperties.json'
-// import buttonStyleSections from './buttonStyleSections.json'
+import inputStyleSections from './inputStyleSections.json'
 import useStyles from './useStyles'
 
 import Page from '../../components/page/Page'
@@ -26,8 +27,8 @@ const ShapePage = () => {
       ].join(', ')
     }),
 
-    ...(buttonValues.border !== '0em' && { border: `${buttonValues.border} solid ${buttonValues.colorsBorder}` }),
-    ...(buttonValues.borderBottom !== '0em' && { borderBottom: `${buttonValues.borderBottom} solid ${buttonValues.colorsBorderBottom}` }),
+    ...(buttonValues.borderAll !== '0em' && { border: `${buttonValues.borderAll} solid ${buttonValues.borderColor}` }),
+    ...(buttonValues.borderBottom !== '0em' && { borderBottom: `${buttonValues.borderBottom} solid ${buttonValues.borderBottomColor}` }),
 
     background: [
       ...(buttonValues.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${buttonValues.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${buttonValues.roundnessY})`] : []),
@@ -56,8 +57,8 @@ const ShapePage = () => {
       ].join(', ')
     }),
 
-    ...(inputValues.border !== '0em' && { border: `${inputValues.border} solid ${inputValues.colorsBorder}` }),
-    ...(inputValues.borderBottom !== '0em' && { borderBottom: `${inputValues.borderBottom} solid ${inputValues.colorsBorderBottom}` }),
+    ...(inputValues.borderAll !== '0em' && { border: `${inputValues.borderAll} solid ${inputValues.borderColor}` }),
+    ...(inputValues.borderBottom !== '0em' && { borderBottom: `${inputValues.borderBottom} solid ${inputValues.borderBottomColor}` }),
 
     background: [
       ...(inputValues.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(0,0,0, ${inputValues.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${inputValues.roundnessY})`] : []),
@@ -73,6 +74,7 @@ const ShapePage = () => {
         <ElementDesigner
           style={buttonStyle}
           inputs={buttonValues}
+          styleSections={buttonStyleSections}
           onChange={handleButtonValueChange}
         >
           <button style={buttonStyle}>Button</button>
@@ -81,6 +83,7 @@ const ShapePage = () => {
         <ElementDesigner
           style={inputStyle}
           inputs={inputValues}
+          styleSections={inputStyleSections}
           onChange={handleInputValueChange}
         >
           <input style={inputStyle} type='text' placeholder='Write here' />

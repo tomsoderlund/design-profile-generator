@@ -4,7 +4,7 @@ import { guessFormat, titleCase, get } from '../../../lib/helpers'
 import inputsMetadata from './inputsMetadata.json'
 import defaultValuesForFormat from './defaultValuesForFormat.json'
 
-import SmartInput from '../components/input/SmartInput'
+import SmartInput from '../../components/input/SmartInput'
 
 const StyleSection = ({ sectionName, propertyNames, inputs, onChange }) => (
   <div>
@@ -16,7 +16,7 @@ const StyleSection = ({ sectionName, propertyNames, inputs, onChange }) => (
           key={propertyKey}
           type={get(inputsMetadata[propertyKey], 'type')}
           name={propertyKey}
-          label={propertyKey.replace(sectionName, '')}
+          label={titleCase(propertyKey.replace(sectionName, ''))}
           format={format}
           min={get(inputsMetadata[propertyKey], 'min', defaultValuesForFormat[format].min)}
           max={get(inputsMetadata[propertyKey], 'max', defaultValuesForFormat[format].max)}

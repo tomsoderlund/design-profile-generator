@@ -3,7 +3,6 @@
     "colorsBackground"
   ],
   "text":[
-    "textContrast",
     "textSize",
     "padding"
   ],
@@ -14,11 +13,11 @@
     "roundnessIntensity",
     "roundnessY"
   ],
-  "reflection":[
-    "reflectionIntensity",
-    "reflectionY",
-    "reflectionSize",
-    "reflectionBlur"
+  "inner Shadow":[
+    "innerShadowIntensity",
+    "innerShadowY",
+    "innerShadowSize",
+    "innerShadowBlur"
   ],
   "shadow":[
     "shadowIntensity",
