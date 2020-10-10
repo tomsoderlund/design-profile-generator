@@ -1,10 +1,10 @@
 import Page from '../../components/page/Page'
 
-const TypePage = () => {
+const FontPage = () => {
   return (
     <Page>
-      Type
+      Font
     </Page>
   )
 }
-export default TypePage
+export default FontPage

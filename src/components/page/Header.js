@@ -7,7 +7,7 @@ import { config } from '../../../config/config'
 
 const menuOptions = [
   'Color',
-  'Type',
+  'Font',
   'Shape'
 ]
 

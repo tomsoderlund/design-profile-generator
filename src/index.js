@@ -2,7 +2,7 @@ import { Router } from 'preact-router'
 
 import Start from './pages/Start'
 import Color from './pages/Color'
-import Type from './pages/Type'
+import Font from './pages/Font'
 import Shape from './pages/Shape'
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <Router>
       <Start path='/' />
       <Color path='/color' />
-      <Type path='/type' />
+      <Font path='/font' />
       <Shape path='/shape' />
     </Router>
   )
