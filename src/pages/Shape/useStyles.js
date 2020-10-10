@@ -8,8 +8,12 @@ export default function useStyles (defaultStyleProperties) {
     setValues({ ...values, [target.name]: value })
   }
 
-  return [values, handleValueChange]
+  const handleReset = () => {
+    setValues(defaultStyleProperties)
+  }
+
+  return [values, handleValueChange, handleReset]
 }
 
 // import useStyles from '../hooks/useStyles'
-// const [buttonValues, handleButtonStyleChange] = useStyles(buttonStyleProperties)
+// const [buttonValues, handleButtonStyleChange, handleButtonReset] = useStyles(buttonStyleProperties)

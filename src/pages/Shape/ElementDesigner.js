@@ -4,10 +4,13 @@ import { kebabCase } from '../../../lib/helpers'
 
 import StyleSection from './StyleSection'
 
-const ElementDesigner = ({ children, style, styleSections, inputs, onChange }) => (
+const ElementDesigner = ({ children, style, styleSections, inputs, onChange, onReset }) => (
   <div className='element-designer'>
     <div className='preview-box'>
       {children}
+      <div className='actions'>
+        <a onClick={onReset}>Reset</a>
+      </div>
     </div>
 
     <div className='sections-box'>
