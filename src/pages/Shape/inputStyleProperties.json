@@ -1,27 +1,29 @@
 {
-  "colorsBackground":"#ffffff",
+  "default":{
+    "colorsBackground":"#ffffff",
 
-  "textSize":"16px",  
-  "padding":"0.6em",
+    "textSize":"16px",  
+    "padding":"0.6em",
 
-  "cornersRadius":"0.5em",
+    "cornersRadius":"0.5em",
 
-  "roundnessIntensity":0,
-  "roundnessY":"50%",
+    "roundnessIntensity":0,
+    "roundnessY":"50%",
 
-  "innerShadowIntensity":0.3,
-  "innerShadowX":"0.0em",
-  "innerShadowY":"0.2em",
-  "innerShadowSize":"0em",
-  "innerShadowBlur":"0.125em",
+    "innerShadowIntensity":0.3,
+    "innerShadowX":"0.0em",
+    "innerShadowY":"0.2em",
+    "innerShadowSize":"0em",
+    "innerShadowBlur":"0.125em",
 
-  "shadowIntensity":0,
-  "shadowY":"0.2em",
-  "shadowSize":"0em",
-  "shadowBlur":"0.125em",
+    "shadowIntensity":0,
+    "shadowY":"0.2em",
+    "shadowSize":"0em",
+    "shadowBlur":"0.125em",
 
-  "borderAll":"0.1em",
-  "borderColor":"#d3d3d3",
-  "borderBottom":"0em",
-  "borderBottomColor":"#d3d3d3"
+    "borderAll":"0.1em",
+    "borderColor":"#d3d3d3",
+    "borderBottom":"0em",
+    "borderBottomColor":"#d3d3d3"
+  }
 }

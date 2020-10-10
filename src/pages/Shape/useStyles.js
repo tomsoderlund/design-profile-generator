@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function useStyles (defaultStyleProperties) {
-  const [values, setValues] = useState(defaultStyleProperties)
+  const [values, setValues] = useState(defaultStyleProperties.default)
 
   const handleValueChange = ({ target }) => {
     const value = target.type === 'checkbox' ? target.checked : target.value
@@ -9,7 +9,7 @@ export default function useStyles (defaultStyleProperties) {
   }
 
   const handleReset = () => {
-    setValues(defaultStyleProperties)
+    setValues(defaultStyleProperties.default)
   }
 
   return [values, handleValueChange, handleReset]

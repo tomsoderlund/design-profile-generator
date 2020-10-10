@@ -1,27 +1,29 @@
 {
-  "colorsBackground":"#00ced1",
-  "textContrast":0.8,
+  "default":{
+    "colorsBackground":"#00ced1",
+    "textContrast":0.8,
 
-  "textSize":"16px",  
-  "padding":"0.6em",
+    "textSize":"16px",  
+    "padding":"0.6em",
 
-  "cornersRadius":"0.5em",
+    "cornersRadius":"0.5em",
 
-  "roundnessIntensity":0.5,
-  "roundnessY":"100%",
+    "roundnessIntensity":0.5,
+    "roundnessY":"100%",
 
-  "reflectionIntensity":0.3,
-  "reflectionY":"0.2em",
-  "reflectionSize":"0em",
-  "reflectionBlur":"0.125em",
+    "reflectionIntensity":0.3,
+    "reflectionY":"0.2em",
+    "reflectionSize":"0em",
+    "reflectionBlur":"0.125em",
 
-  "shadowIntensity":0.3,
-  "shadowY":"0.2em",
-  "shadowSize":"0em",
-  "shadowBlur":"0.125em",
+    "shadowIntensity":0.3,
+    "shadowY":"0.2em",
+    "shadowSize":"0em",
+    "shadowBlur":"0.125em",
 
-  "borderAll":"0em",
-  "borderColor":"#000000",
-  "borderBottom":"0em",
-  "borderBottomColor":"#000000"
+    "borderAll":"0em",
+    "borderColor":"#000000",
+    "borderBottom":"0em",
+    "borderBottomColor":"#000000"
+  }
 }
