@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { guessFormat, titleCase, get } from '../../../lib/helpers'
+import { guessFormat, spaceCase, titleCase, get } from '../../../lib/helpers'
 import inputsMetadata from './inputsMetadata.json'
 import defaultValuesForFormat from './defaultValuesForFormat.json'
 
@@ -8,7 +8,7 @@ import SmartInput from '../../components/input/SmartInput'
 
 const StyleSection = ({ sectionName, propertyNames, inputs, onChange }) => (
   <div>
-    <h3>{titleCase(sectionName)}</h3>
+    <h3>{titleCase(spaceCase(sectionName))}</h3>
     {propertyNames.map((propertyKey, index) => {
       const format = get(inputsMetadata[propertyKey], 'format', guessFormat(inputs[propertyKey]))
       return (

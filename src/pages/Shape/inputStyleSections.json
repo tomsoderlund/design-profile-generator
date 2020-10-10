@@ -13,8 +13,9 @@
     "roundnessIntensity",
     "roundnessY"
   ],
-  "inner Shadow":[
+  "innerShadow":[
     "innerShadowIntensity",
+    "innerShadowX",
     "innerShadowY",
     "innerShadowSize",
     "innerShadowBlur"
