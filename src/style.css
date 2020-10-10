@@ -108,7 +108,7 @@ h3 {
   max-width: 90%;
   height: 12em;
   background: #444;
-  color: #f4f4f4;
+  color: #fefefe;
 }
 
 @media only screen and (max-width: 480px) {
@@ -151,7 +151,7 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: 2px;
   border-radius: 2.05em;
   border: none;
-  background: #f4f4f4;
+  background: #fefefe;
   cursor: pointer;
   -webkit-appearance: none;
   box-shadow: 0 0.2em 0.2em rgba(0,0,0, 0.3);
@@ -175,7 +175,7 @@ input[type="range"]::-moz-range-thumb {
   width: calc(2.05em - 4px);
   border-radius: 2.05em;
   border: none;
-  background: #f4f4f4;
+  background: #fefefe;
   cursor: pointer;
   box-shadow: 0 0.2em 0.2em rgba(0,0,0, 0.3);
 }
@@ -210,7 +210,7 @@ input[type="range"]::-ms-thumb {
   height: calc(2.05em - 4px);
   width: calc(2.05em - 4px);
   border-radius: 2.05em;
-  background: #f4f4f4;
+  background: #fefefe;
   cursor: pointer;
   box-shadow: 0 0.2em 0.2em rgba(0,0,0, 0.3);
 }
