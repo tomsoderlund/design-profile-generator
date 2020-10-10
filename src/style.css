@@ -72,11 +72,16 @@ h3 {
 }
 
 .preview-box > button,
-.preview-box > input:not([type="radio"]):not([type="checkbox"]):not([type="color"]):not([type="range"]), .input, textarea, select {
+.preview-box > button:hover,
+.preview-box > button:active,
+.preview-box > input:not([type="radio"]):not([type="checkbox"]):not([type="color"]):not([type="range"]),
+.preview-box > input:not([type="radio"]):not([type="checkbox"]):not([type="color"]):not([type="range"]):hover,
+.preview-box > input:not([type="radio"]):not([type="checkbox"]):not([type="color"]):not([type="range"]):focus {
   background: none;
   box-shadow: none;
   border: none;
   border-radius: unset;
+  filter: unset;
 }
 
 .preview-box .actions {
