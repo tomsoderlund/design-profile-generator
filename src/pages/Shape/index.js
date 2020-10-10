@@ -11,7 +11,7 @@ import ElementDesigner from './ElementDesigner'
 
 const ShapePage = () => {
   // Button
-  const [buttonValues, handleButtonValueChange, handleButtonReset] = useStyles(buttonStyleProperties)
+  const [buttonValues, handleButtonValueChange, setButtonTheme] = useStyles(buttonStyleProperties)
 
   const buttonStyle = {
     fontSize: buttonValues.textSize,
@@ -41,7 +41,7 @@ const ShapePage = () => {
   }
 
   // Input field
-  const [inputValues, handleInputValueChange, handleInputReset] = useStyles(inputStyleProperties)
+  const [inputValues, handleInputValueChange, setInputTheme] = useStyles(inputStyleProperties)
 
   const inputStyle = {
     fontSize: inputValues.textSize,
@@ -76,7 +76,7 @@ const ShapePage = () => {
           inputs={buttonValues}
           styleSections={buttonStyleSections}
           onChange={handleButtonValueChange}
-          onReset={handleButtonReset}
+          onSetTheme={setButtonTheme}
         >
           <button style={buttonStyle}>Button</button>
         </ElementDesigner>
@@ -86,7 +86,7 @@ const ShapePage = () => {
           inputs={inputValues}
           styleSections={inputStyleSections}
           onChange={handleInputValueChange}
-          onReset={handleInputReset}
+          onSetTheme={setInputTheme}
         >
           <input style={inputStyle} type='text' placeholder='Write here' />
         </ElementDesigner>

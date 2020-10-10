@@ -4,12 +4,14 @@ import { kebabCase } from '../../../lib/helpers'
 
 import StyleSection from './StyleSection'
 
-const ElementDesigner = ({ children, style, styleSections, inputs, onChange, onReset }) => (
+const ElementDesigner = ({ children, style, styleSections, inputs, onChange, onSetTheme }) => (
   <div className='element-designer'>
     <div className='preview-box'>
       {children}
       <div className='actions'>
-        <a onClick={onReset}>Reset</a>
+        <a onClick={e => onSetTheme('default')}>Default</a>
+        {' '}
+        <a onClick={e => onSetTheme('clear')}>Clear</a>
       </div>
     </div>
 

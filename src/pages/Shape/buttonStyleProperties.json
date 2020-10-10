@@ -25,5 +25,13 @@
     "borderColor":"#000000",
     "borderBottom":"0em",
     "borderBottomColor":"#000000"
+  },
+  "clear":{
+    "cornersRadius":"0em",
+    "roundnessIntensity":0,
+    "reflectionIntensity":0,
+    "shadowIntensity":0,
+    "borderAll":"0em",
+    "borderBottom":"0em"
   }
 }

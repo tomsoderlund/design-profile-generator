@@ -8,12 +8,15 @@ export default function useStyles (defaultStyleProperties) {
     setValues({ ...values, [target.name]: value })
   }
 
-  const handleReset = () => {
-    setValues(defaultStyleProperties.default)
+  const setTheme = (theme = 'default') => {
+    setValues({
+      ...values,
+      ...defaultStyleProperties[theme]
+    })
   }
 
-  return [values, handleValueChange, handleReset]
+  return [values, handleValueChange, setTheme]
 }
 
 // import useStyles from '../hooks/useStyles'
-// const [buttonValues, handleButtonStyleChange, handleButtonReset] = useStyles(buttonStyleProperties)
+// const [buttonValues, handleButtonStyleChange, setButtonTheme] = useStyles(buttonStyleProperties)
