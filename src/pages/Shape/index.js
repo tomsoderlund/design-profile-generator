@@ -35,9 +35,7 @@ const ShapePage = () => {
       buttonValues.colorsBackground
     ].join(', '),
 
-    color: buttonValues.textContrast > 0
-      ? tinycolor.mix(tinycolor(buttonValues.colorsBackground), tinycolor('#000'), buttonValues.textContrast * 100).toHexString()
-      : tinycolor.mix(tinycolor(buttonValues.colorsBackground), tinycolor('#fff'), Math.abs(buttonValues.textContrast) * 100).toHexString()
+    color: `rgba(${buttonValues.textContrast > 0 ? '0,0,0' : '255,255,255'}, ${Math.abs(buttonValues.textContrast)})`
   }
 
   // Input field
