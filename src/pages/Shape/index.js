@@ -1,8 +1,8 @@
 import tinycolor from 'tinycolor2'
 
-import defaultButtonStyleProperties from './defaultButtonStyleProperties.json'
+import buttonStyleProperties from './buttonStyleProperties.json'
 import buttonStyleSections from './buttonStyleSections.json'
-import defaultInputStyleProperties from './defaultInputStyleProperties.json'
+import inputStyleProperties from './inputStyleProperties.json'
 import inputStyleSections from './inputStyleSections.json'
 import useStyles from './useStyles'
 
@@ -11,7 +11,7 @@ import ElementDesigner from './ElementDesigner'
 
 const ShapePage = () => {
   // Button
-  const [buttonValues, handleButtonValueChange] = useStyles(defaultButtonStyleProperties)
+  const [buttonValues, handleButtonValueChange] = useStyles(buttonStyleProperties)
 
   const buttonStyle = {
     fontSize: buttonValues.textSize,
@@ -41,7 +41,7 @@ const ShapePage = () => {
   }
 
   // Input field
-  const [inputValues, handleInputValueChange] = useStyles(defaultInputStyleProperties)
+  const [inputValues, handleInputValueChange] = useStyles(inputStyleProperties)
 
   const inputStyle = {
     fontSize: inputValues.textSize,

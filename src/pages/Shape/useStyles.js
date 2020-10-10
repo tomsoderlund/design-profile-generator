@@ -12,4 +12,4 @@ export default function useStyles (defaultStyleProperties) {
 }
 
 // import useStyles from '../hooks/useStyles'
-// const [buttonValues, handleButtonStyleChange] = useStyles(defaultButtonStyleProperties)
+// const [buttonValues, handleButtonStyleChange] = useStyles(buttonStyleProperties)
