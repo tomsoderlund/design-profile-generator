@@ -27,6 +27,7 @@
     "borderBottomColor":"#d3d3d3"
   },
   "clear":{
+    "colorsBackground":"#ffffff",
     "cornersRoundness":"0em",
     "bevelIntensity":0,
     "innerShadowIntensity":0,
