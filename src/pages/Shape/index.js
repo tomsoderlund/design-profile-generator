@@ -18,7 +18,7 @@ const ShapePage = () => {
 
     padding: buttonValues.padding,
 
-    ...(buttonValues.cornersRadius !== '0em' && { borderRadius: buttonValues.cornersRadius }),
+    ...(buttonValues.cornersRoundness !== '0em' && { borderRadius: buttonValues.cornersRoundness }),
 
     ...((buttonValues.shadowIntensity > 0 || buttonValues.reflectionIntensity > 0) && {
       boxShadow: [
@@ -31,7 +31,7 @@ const ShapePage = () => {
     ...(buttonValues.borderBottom !== '0em' && { borderBottom: `${buttonValues.borderBottom} solid ${buttonValues.borderBottomColor}` }),
 
     background: [
-      ...(buttonValues.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${buttonValues.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${buttonValues.roundnessY})`] : []),
+      ...(buttonValues.bevelIntensity > 0 ? [`linear-gradient(180deg, rgba(255,255,255, ${buttonValues.bevelIntensity}) 0%, rgba(255,255,255, 0) ${buttonValues.bevelY})`] : []),
       buttonValues.colorsBackground
     ].join(', '),
 
@@ -48,7 +48,7 @@ const ShapePage = () => {
 
     padding: inputValues.padding,
 
-    ...(inputValues.cornersRadius !== '0em' && { borderRadius: inputValues.cornersRadius }),
+    ...(inputValues.cornersRoundness !== '0em' && { borderRadius: inputValues.cornersRoundness }),
 
     ...((inputValues.shadowIntensity > 0 || inputValues.innerShadowIntensity > 0) && {
       boxShadow: [
@@ -61,7 +61,7 @@ const ShapePage = () => {
     ...(inputValues.borderBottom !== '0em' && { borderBottom: `${inputValues.borderBottom} solid ${inputValues.borderBottomColor}` }),
 
     background: [
-      ...(inputValues.roundnessIntensity > 0 ? [`linear-gradient(180deg, rgba(0,0,0, ${inputValues.roundnessIntensity}) 0%, rgba(255,255,255, 0) ${inputValues.roundnessY})`] : []),
+      ...(inputValues.bevelIntensity > 0 ? [`linear-gradient(180deg, rgba(0,0,0, ${inputValues.bevelIntensity}) 0%, rgba(255,255,255, 0) ${inputValues.bevelY})`] : []),
       inputValues.colorsBackground
     ].join(', '),
 

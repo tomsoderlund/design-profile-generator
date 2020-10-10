@@ -5,10 +5,10 @@
     "textSize":"16px",  
     "padding":"0.6em",
 
-    "cornersRadius":"0.5em",
+    "cornersRoundness":"0.5em",
 
-    "roundnessIntensity":0,
-    "roundnessY":"50%",
+    "bevelIntensity":0,
+    "bevelY":"50%",
 
     "innerShadowIntensity":0.3,
     "innerShadowX":"0.0em",
@@ -27,8 +27,8 @@
     "borderBottomColor":"#d3d3d3"
   },
   "clear":{
-    "cornersRadius":"0em",
-    "roundnessIntensity":0,
+    "cornersRoundness":"0em",
+    "bevelIntensity":0,
     "innerShadowIntensity":0,
     "shadowIntensity":0,
     "borderAll":"0.1em",

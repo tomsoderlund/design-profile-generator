@@ -6,10 +6,10 @@
     "textSize":"16px",  
     "padding":"0.6em",
 
-    "cornersRadius":"0.5em",
+    "cornersRoundness":"0.5em",
 
-    "roundnessIntensity":0.5,
-    "roundnessY":"100%",
+    "bevelIntensity":0.5,
+    "bevelY":"100%",
 
     "reflectionIntensity":0.3,
     "reflectionY":"0.2em",
@@ -27,8 +27,8 @@
     "borderBottomColor":"#000000"
   },
   "clear":{
-    "cornersRadius":"0em",
-    "roundnessIntensity":0,
+    "cornersRoundness":"0em",
+    "bevelIntensity":0,
     "reflectionIntensity":0,
     "shadowIntensity":0,
     "borderAll":"0em",

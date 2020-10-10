@@ -8,11 +8,11 @@
     "padding"
   ],
   "corners":[
-    "cornersRadius"
+    "cornersRoundness"
   ],
-  "roundness":[
-    "roundnessIntensity",
-    "roundnessY"
+  "bevel":[
+    "bevelIntensity",
+    "bevelY"
   ],
   "reflection":[
     "reflectionIntensity",
