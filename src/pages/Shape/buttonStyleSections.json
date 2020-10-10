@@ -4,11 +4,11 @@
   ],
   "text":[
     "textContrast",
-    "textSize",
-    "padding"
+    "textSize"
   ],
   "corners":[
-    "cornersRoundness"
+    "cornersRoundness",
+    "padding"
   ],
   "bevel":[
     "bevelIntensity",
