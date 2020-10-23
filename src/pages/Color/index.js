@@ -30,7 +30,7 @@ const MenuItem = ({ index, option, name, value, selected, currentValue, handleCh
 
 const ColorPicker = ({ label, propertyName, colorList, properties, setProperty }) => (
   <div className='color-picker'>
-    <label className='large'>{label || propertyName}:</label>
+    <label className='large'>{label || propertyName}: </label>
     <SelectMenu
       className='large'
       options={colorList}
