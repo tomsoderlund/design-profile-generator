@@ -1,7 +1,7 @@
 {
   "default":{
     "colorsBackground":"#00ced1",
-    "textContrast":0.8,
+    "textContrast":-1.0,
 
     "textSize":"16px",  
     "padding":"0.6em",

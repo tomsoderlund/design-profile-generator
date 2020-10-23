@@ -11,14 +11,14 @@ import Page from '../../components/page/Page'
 
 import './style.css'
 
-const contrastColor = (color) => (tinycolor(color).getBrightness() > 128) ? 'black' : 'white'
+const contrastColor = (color) => (tinycolor(color).getBrightness() > 190) ? 'black' : 'white'
 
 const MenuItem = ({ index, option, name, value, selected, currentValue, handleChange }) => {
   return (
     <button
       id={value}
       className={'menu-item' + (selected ? ' selected' : '')}
-      title={option.title}
+      title={`Brightness: ${tinycolor(option).getBrightness()}`}
       disabled={option.disabled}
       onClick={handleChange}
       style={{ backgroundColor: option, color: contrastColor(option) }}
