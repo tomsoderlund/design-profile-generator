@@ -38,5 +38,10 @@
     "backgroundColor": "#f9f8fd",
     "actionColor": "#e94c89",
     "panelColor": "white"
+  },
+  "podia": {
+    "backgroundColor": "#fffaf6",
+    "actionColor": "#5c39c7",
+    "panelColor": "white"
   }
 }
