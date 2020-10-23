@@ -1,5 +1,6 @@
 import { useState } from 'preact/hooks'
 import tinycolor from 'tinycolor2'
+import { getSessionValue, setSessionValue } from 'simple-browser-session'
 import { SelectMenu } from 'react-zeroconfig-components'
 import '../../../node_modules/react-zeroconfig-components/dist/SelectMenu.css'
 
@@ -61,17 +62,25 @@ const MenuItem = ({ index, option, name, value, selected, currentValue, handleCh
 }
 
 const ColorPage = () => {
-  const [backgroundColor, setBackgroundColor] = useState('white')
-  const [actionColor, setActionColor] = useState('darkturquoise')
+  const [properties, setProperties] = useState({
+    backgroundColor: getSessionValue('backgroundColor', 'white'),
+    actionColor: getSessionValue('actionColor', 'darkturquoise')
+  })
+
+  const setProperty = (propertyName, value) => {
+    setProperties({ ...properties, [propertyName]: value })
+    setSessionValue(propertyName, value, { updateStored: true, updatePath: true })
+  }
+
   return (
     <Page
-      style={{ backgroundColor }}
+      style={{ backgroundColor: properties.backgroundColor }}
     >
       <div className='center-column'>
         <button
           type='button'
-          className='large'
-          style={{ backgroundColor: actionColor, color: contrastColor(actionColor) }}
+          className='large example'
+          style={{ backgroundColor: properties.actionColor, color: contrastColor(properties.actionColor) }}
         >
           Example Button
         </button>
@@ -80,16 +89,16 @@ const ColorPage = () => {
           <SelectMenu
             className='large'
             options={backgroundColorList}
-            value={backgroundColor}
-            onChange={setBackgroundColor}
+            value={properties.backgroundColor}
+            onChange={value => setProperty('backgroundColor', value)}
             customChild={MenuItem}
           />
 
           <SelectMenu
             className='large'
             options={actionColorList}
-            value={actionColor}
-            onChange={setActionColor}
+            value={properties.actionColor}
+            onChange={value => setProperty('actionColor', value)}
             customChild={MenuItem}
           />
         </div>

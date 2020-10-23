@@ -2,3 +2,8 @@
   height: 50vh;
   justify-content: space-around;
 }
+
+button.example,
+button.example:hover:not(:disabled) {
+  box-shadow: none;
+}

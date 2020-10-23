@@ -26,6 +26,7 @@
     "preact-render-to-string": "^5.1.2",
     "preact-router": "^3.2.1",
     "react-zeroconfig-components": "^1.8.6",
+    "simple-browser-session": "^1.1.6",
     "tinycolor2": "^1.4.2"
   },
   "devDependencies": {
