@@ -1,9 +1,13 @@
+import { getSessionValue } from 'simple-browser-session'
+
 import Page from '../../components/page/Page'
 
 const FontPage = () => {
   return (
-    <Page>
-      Font
+    <Page
+      style={{ backgroundColor: getSessionValue('backgroundColor') }}
+    >
+      Coming soon
     </Page>
   )
 }

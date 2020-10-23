@@ -17,6 +17,9 @@ header, footer {
 }
 
 main {
+  width: 100%;
+  max-width: unset;
+  padding: 0 5vw;
   min-height: 100vh;
   overflow-x: hidden;
 }

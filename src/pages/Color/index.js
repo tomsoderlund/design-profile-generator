@@ -4,45 +4,12 @@ import { getSessionValue, setSessionValue } from 'simple-browser-session'
 import { SelectMenu } from 'react-zeroconfig-components'
 import '../../../node_modules/react-zeroconfig-components/dist/SelectMenu.css'
 
+import backgroundColorList from './backgroundColors.json'
+import actionColorList from './actionColors.json'
+
 import Page from '../../components/page/Page'
 
 import './style.css'
-
-export const backgroundColorList = ['white', 'whitesmoke', 'dimgray', 'black', '#fffaf6', '#f6f6f9']
-export const actionColorList = [
-  'slategray',
-  'indianred',
-  'salmon',
-  'crimson',
-  'hotpink',
-  'deeppink',
-  'mediumvioletred',
-  'tomato',
-  'darkorange',
-  'gold',
-  'lightyellow',
-  'plum',
-  'violet',
-  'mediumpurple',
-  'blueviolet',
-  'indigo',
-  'slateblue',
-  'darkslateblue',
-  'greenyellow',
-  'lime',
-  'limegreen',
-  'palegreen',
-  'springgreen',
-  'teal',
-  'cyan',
-  'turquoise',
-  'darkturquoise',
-  'steelblue',
-  'skyblue',
-  'deepskyblue',
-  'dodgerblue',
-  'chocolate'
-]
 
 const contrastColor = (color) => (tinycolor(color).getBrightness() > 128) ? 'black' : 'white'
 

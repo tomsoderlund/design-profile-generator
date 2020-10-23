@@ -17,7 +17,7 @@ export default ({ title = config.appName, children }) => {
   const [currentMenu, setCurrentMenu] = useState()
 
   const navigateTo = (menuOption) => {
-    route(`/${menuOption.toLowerCase()}`)
+    route(`/${menuOption.toLowerCase()}${window.location.search}`)
   }
 
   useEffect(() => {

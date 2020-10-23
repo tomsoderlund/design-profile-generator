@@ -1,3 +1,5 @@
+import { getSessionValue } from 'simple-browser-session'
+
 import buttonStyleProperties from './buttonStyleProperties.json'
 import buttonStyleSections from './buttonStyleSections.json'
 import inputStyleProperties from './inputStyleProperties.json'
@@ -9,7 +11,7 @@ import ElementDesigner from './ElementDesigner'
 
 const ShapePage = () => {
   // Button
-  const [buttonValues, handleButtonValueChange, setButtonTheme] = useStyles(buttonStyleProperties)
+  const [buttonValues, handleButtonValueChange, setButtonTheme] = useStyles('button', buttonStyleProperties)
 
   const buttonStyle = {
     fontSize: buttonValues.textSize,
@@ -37,7 +39,7 @@ const ShapePage = () => {
   }
 
   // Input field
-  const [inputValues, handleInputValueChange, setInputTheme] = useStyles(inputStyleProperties)
+  const [inputValues, handleInputValueChange, setInputTheme] = useStyles('input', inputStyleProperties)
 
   const inputStyle = {
     fontSize: inputValues.textSize,
@@ -65,7 +67,9 @@ const ShapePage = () => {
   }
 
   return (
-    <Page>
+    <Page
+      style={{ backgroundColor: getSessionValue('backgroundColor') }}
+    >
       <div className='center-page'>
         <ElementDesigner
           style={buttonStyle}
