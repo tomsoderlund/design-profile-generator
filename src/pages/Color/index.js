@@ -28,6 +28,19 @@ const MenuItem = ({ index, option, name, value, selected, currentValue, handleCh
   )
 }
 
+const ColorPicker = ({ label, propertyName, colorList, properties, setProperty }) => (
+  <div>
+    <label className='large'>{label || propertyName}:</label>
+    <SelectMenu
+      className='large'
+      options={colorList}
+      value={properties[propertyName]}
+      onChange={value => setProperty(propertyName, value)}
+      customChild={MenuItem}
+    />
+  </div>
+)
+
 const ColorPage = () => {
   const [properties, setProperties] = useState({
     backgroundColor: getSessionValue('backgroundColor', 'white'),
@@ -53,20 +66,20 @@ const ColorPage = () => {
         </button>
 
         <div className='center-row'>
-          <SelectMenu
-            className='large'
-            options={backgroundColorList}
-            value={properties.backgroundColor}
-            onChange={value => setProperty('backgroundColor', value)}
-            customChild={MenuItem}
+          <ColorPicker
+            label='Background'
+            propertyName='backgroundColor'
+            colorList={backgroundColorList}
+            properties={properties}
+            setProperty={setProperty}
           />
 
-          <SelectMenu
-            className='large'
-            options={actionColorList}
-            value={properties.actionColor}
-            onChange={value => setProperty('actionColor', value)}
-            customChild={MenuItem}
+          <ColorPicker
+            label='Buttons'
+            propertyName='actionColor'
+            colorList={actionColorList}
+            properties={properties}
+            setProperty={setProperty}
           />
         </div>
       </div>
