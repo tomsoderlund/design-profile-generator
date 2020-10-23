@@ -41,10 +41,21 @@ const ColorPicker = ({ label, propertyName, colorList, properties, setProperty }
   </div>
 )
 
+const ExampleButton = ({ properties }) => (
+  <button
+    type='button'
+    className='large example'
+    style={{ backgroundColor: properties.actionColor, color: contrastColor(properties.actionColor) }}
+  >
+    Example Button
+  </button>
+)
+
 const ColorPage = () => {
   const [properties, setProperties] = useState({
     backgroundColor: getSessionValue('backgroundColor', 'white'),
-    actionColor: getSessionValue('actionColor', 'darkturquoise')
+    actionColor: getSessionValue('actionColor', 'rebeccapurple'),
+    panelColor: getSessionValue('panelColor', '')
   })
 
   const setProperty = (propertyName, value) => {
@@ -58,13 +69,17 @@ const ColorPage = () => {
       style={{ backgroundColor: properties.backgroundColor }}
     >
       <div className='center-column'>
-        <button
-          type='button'
-          className='large example'
-          style={{ backgroundColor: properties.actionColor, color: contrastColor(properties.actionColor) }}
-        >
-          Example Button
-        </button>
+        <div className='examples center-row'>
+          <ExampleButton properties={properties} />
+          {properties.panelColor !== '' && (
+            <div
+              className='panel example'
+              style={{ backgroundColor: properties.panelColor, color: contrastColor(properties.panelColor) }}
+            >
+              <ExampleButton properties={properties} />
+            </div>
+          )}
+        </div>
 
         <div className='center-row'>
           <ColorPicker
@@ -78,6 +93,14 @@ const ColorPage = () => {
           <ColorPicker
             label='Buttons'
             propertyName='actionColor'
+            colorList={actionColorList}
+            properties={properties}
+            setProperty={setProperty}
+          />
+
+          <ColorPicker
+            label='Panels'
+            propertyName='panelColor'
             colorList={actionColorList}
             properties={properties}
             setProperty={setProperty}

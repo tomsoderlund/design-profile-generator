@@ -13,6 +13,7 @@
   "plum",
   "violet",
   "mediumpurple",
+  "rebeccapurple",
   "blueviolet",
   "indigo",
   "slateblue",
@@ -30,5 +31,6 @@
   "skyblue",
   "deepskyblue",
   "dodgerblue",
-  "chocolate"
+  "chocolate",
+  ""
 ]

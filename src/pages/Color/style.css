@@ -8,6 +8,10 @@ button.example:hover:not(:disabled) {
   box-shadow: none;
 }
 
+.panel.example {
+  padding: 1em;
+}
+
 .color-picker {
   margin: 0.5em;
   white-space: wrap;
