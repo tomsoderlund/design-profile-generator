@@ -7,3 +7,8 @@ button.example,
 button.example:hover:not(:disabled) {
   box-shadow: none;
 }
+
+.color-picker {
+  margin: 0.5em;
+  white-space: wrap;
+}
