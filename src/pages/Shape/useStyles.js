@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getSessionValue } from 'simple-browser-session'
+import { getSessionValue } from '../../lib/simpleSessionClient'
 
 const applyGlobalStyleProperties = (elementType, styleProperties) => {
   const remappedProperties = {

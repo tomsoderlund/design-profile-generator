@@ -1,6 +1,6 @@
 import { useState } from 'preact/hooks'
 import tinycolor from 'tinycolor2'
-import { getSessionValue, setSessionValue } from 'simple-browser-session'
+import { getSessionValue, setSessionValue } from '../../lib/simpleSessionClient'
 import { SelectMenu } from 'react-zeroconfig-components'
 import '../../../node_modules/react-zeroconfig-components/dist/SelectMenu.css'
 

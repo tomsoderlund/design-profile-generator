@@ -1,4 +1,4 @@
-import { getSessionValue } from 'simple-browser-session'
+import { getSessionValue } from '../../lib/simpleSessionClient'
 
 import buttonStyleProperties from './buttonStyleProperties.json'
 import buttonStyleSections from './buttonStyleSections.json'
