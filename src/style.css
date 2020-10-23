@@ -265,6 +265,11 @@ input[type="range"]::-ms-thumb:hover {
 .select .menu-closed {
   color: black;
   min-width: unset;
+  box-shadow: none;
+}
+.select .menu-closed:hover {
+  filter: unset;
+  box-shadow: none;
 }
 
 .select .menu-closed svg {
