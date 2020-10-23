@@ -11,7 +11,7 @@ const ElementDesigner = ({ children, style, styleSections, inputs, onChange, onS
       <div className='actions'>
         <a onClick={e => onSetTheme('default')}>Default</a>
         {' '}
-        <a onClick={e => onSetTheme('clear')}>Clear</a>
+        <a onClick={e => onSetTheme('clear')}>Clean</a>
       </div>
     </div>
 
