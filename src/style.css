@@ -262,6 +262,13 @@ input[type="range"]::-ms-thumb:hover {
   width: 12em;
 }
 
+@media only screen and (max-width: 480px) {
+  .select.large button,
+  .select.large .menu-open {
+    width: 100%;
+  }
+}
+
 .select .menu-closed {
   color: black;
   min-width: unset;
@@ -280,6 +287,7 @@ input[type="range"]::-ms-thumb:hover {
 .select .menu-open {
   max-height: 40vh;
   overflow-y: auto !important;
+  z-index: 1;
 }
 
 .select .menu-open button:hover:not(:disabled) {
