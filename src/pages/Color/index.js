@@ -54,6 +54,7 @@ const ColorPage = () => {
 
   return (
     <Page
+      title='Color'
       style={{ backgroundColor: properties.backgroundColor }}
     >
       <div className='center-column'>

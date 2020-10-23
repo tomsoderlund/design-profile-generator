@@ -6,7 +6,7 @@
   "homepage": "http://tomsoderlund.github.io/design-profile-generator",
   "scripts": {
     "dev": "PORT=3113 preact watch",
-    "build": "preact build",
+    "build": "preact build --prerenderUrls ./prerenderUrls.json",
     "serve": "sirv build --port 3113 --cors --single",
     "eslint": "eslint src",
     "lint": "standard",

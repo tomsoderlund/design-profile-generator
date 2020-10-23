@@ -68,6 +68,7 @@ const ShapePage = () => {
 
   return (
     <Page
+      title='Shape'
       style={{ backgroundColor: getSessionValue('backgroundColor') }}
     >
       <div className='center-page'>
