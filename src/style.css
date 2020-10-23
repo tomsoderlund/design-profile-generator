@@ -17,7 +17,7 @@ header, footer {
 }
 
 main {
-  min-height: unset;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
@@ -51,8 +51,10 @@ h3 {
 }
 
 @media only screen and (max-width: 480px) {
+  .center-row,
   .center-page {
     flex-direction: column;
+    justify-content: space-around;
   }  
 
   .element-designer {
@@ -228,4 +230,38 @@ input[type="range"]::-ms-thumb:hover {
   background-color: white;
   box-shadow: none;
   border: 1px solid black;
+}
+
+.large {
+  font-size: 1.7em;
+}
+
+/* SelectMenu */
+
+.select.large {
+  font-size: 1.7em;
+}
+
+.select.large button,
+.select.large .menu-open {
+  width: 12em;
+}
+
+.select .menu-closed {
+  color: black;
+  min-width: unset;
+}
+
+.select .menu-closed svg {
+  width: 0.71em;
+  height: 1.29em;
+}
+
+.select .menu-open {
+  max-height: 40vh;
+  overflow-y: auto !important;
+}
+
+.select .menu-open button:hover:not(:disabled) {
+  box-shadow: none;
 }

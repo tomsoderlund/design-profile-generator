@@ -1,5 +1,3 @@
-import tinycolor from 'tinycolor2'
-
 import buttonStyleProperties from './buttonStyleProperties.json'
 import buttonStyleSections from './buttonStyleSections.json'
 import inputStyleProperties from './inputStyleProperties.json'

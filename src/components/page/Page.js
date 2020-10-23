@@ -5,7 +5,7 @@ import Footer from './Footer'
 import '../../../node_modules/niceandsimple-css/niceandsimple.css'
 import '../../style.css'
 
-function Page ({ title, children, contentClassName, showHeader = true }) {
+function Page ({ title, children, className, style, showHeader = true }) {
   return (
     <>
       <PageHead title={title} />
@@ -14,7 +14,10 @@ function Page ({ title, children, contentClassName, showHeader = true }) {
         <Header title={title} />
       )}
 
-      <main className='has-header'>
+      <main
+        className='has-header'
+        style={style}
+      >
         {children}
       </main>
 
