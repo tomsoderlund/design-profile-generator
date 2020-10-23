@@ -128,6 +128,18 @@ input[type="color"] {
   width: 3em;
 }
 
+.no-button {
+  background: none;
+  width: unset;
+  min-width: unset;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+.no-button:hover:active {
+  top: 0;
+}
+
 /* Range input */
 
 input[type="range"] {

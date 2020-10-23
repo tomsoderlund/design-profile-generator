@@ -1,0 +1,42 @@
+{
+  "tomsoderlund": {
+    "backgroundColor": "whitesmoke",
+    "actionColor": "darkturquoise",
+    "panelColor": "rebeccapurple"
+  },
+  "twitter": {
+    "backgroundColor": "white",
+    "actionColor": "#1ea2f1",
+    "panelColor": "#f5f8fa"
+  },
+  "amazon": {
+    "backgroundColor": "white",
+    "actionColor": "#febd68",
+    "panelColor": "#131920"
+  },
+  "linkedin": {
+    "backgroundColor": "whitesmoke",
+    "actionColor": "#0c73b1",
+    "panelColor": "#293e4a"
+  },
+  "snap": {
+    "backgroundColor": "#fffc00",
+    "actionColor": "black",
+    "panelColor": "white"
+  },
+  "byte": {
+    "backgroundColor": "black",
+    "actionColor": "#541def",
+    "panelColor": "#20f5b4"
+  },
+  "stripe": {
+    "backgroundColor": "white",
+    "actionColor": "#092541",
+    "panelColor": "#9e45f5"
+  },
+  "dribbble": {
+    "backgroundColor": "#f9f8fd",
+    "actionColor": "#e94c89",
+    "panelColor": "white"
+  }
+}

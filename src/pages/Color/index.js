@@ -7,11 +7,12 @@ import '../../../node_modules/react-zeroconfig-components/dist/SelectMenu.css'
 import backgroundColorList from './backgroundColors.json'
 import actionColorList from './actionColors.json'
 
+import { contrastColor } from '../../lib/helpers'
+
 import Page from '../../components/page/Page'
+import ThemeSelector from './ThemeSelector'
 
 import './style.css'
-
-const contrastColor = (color) => (tinycolor(color).getBrightness() > 190) ? 'black' : 'white'
 
 const MenuItem = ({ index, option, name, value, selected, currentValue, handleChange }) => {
   return (
@@ -63,6 +64,13 @@ const ColorPage = () => {
     setSessionValue(propertyName, value, { updateStored: true, updatePath: true })
   }
 
+  const setAllProperties = (propertiesObj) => {
+    for (const propertyName in propertiesObj) {
+      setProperty(propertyName, propertiesObj[propertyName])
+    }
+    setProperties(propertiesObj)
+  }
+
   return (
     <Page
       title='Color'
@@ -106,6 +114,10 @@ const ColorPage = () => {
             setProperty={setProperty}
           />
         </div>
+
+        <ThemeSelector
+          onChange={setAllProperties}
+        />
       </div>
     </Page>
   )

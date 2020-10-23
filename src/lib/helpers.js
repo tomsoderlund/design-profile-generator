@@ -1,3 +1,5 @@
+import tinycolor from 'tinycolor2'
+
 export const guessFormat = (value) => {
   const valueStr = value + ''
   if (valueStr.includes('em')) return '?em'
@@ -11,3 +13,5 @@ export const spaceCase = (str) => str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$
 export const titleCase = str => str.replace(/(?:^|\s|[-"'([{])+\S/g, (c) => c.toUpperCase())
 
 export const get = (obj, key, defaultValue) => (obj && Object.prototype.hasOwnProperty.call(obj, key)) ? obj[key] : defaultValue
+
+export const contrastColor = (color) => (tinycolor(color).getBrightness() > 190) ? 'black' : 'white'

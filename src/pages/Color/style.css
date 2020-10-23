@@ -1,6 +1,12 @@
 .center-column {
-  height: 50vh;
+  height: 90vh;
   justify-content: space-around;
+}
+
+@media only screen and (max-width: 480px) {
+  .center-column {
+    height: unset;
+  }
 }
 
 button.example,
@@ -15,4 +21,8 @@ button.example:hover:not(:disabled) {
 .color-picker {
   margin: 0.5em;
   white-space: wrap;
+}
+
+button.theme {
+  margin: 0.4em;
 }
