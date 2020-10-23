@@ -1,0 +1,31 @@
+{
+  "colorsBackground":{
+    "type":"color"
+  },
+  "borderColor":{
+    "type":"color"
+  },
+  "borderBottomColor":{
+    "type":"color"
+  },
+  "cornersRoundness":{
+    "min":0,
+    "max":2,
+    "step":0.1
+  },
+  "reflectionY":{
+    "min":-3
+  },
+  "shadowY":{
+    "min":-3
+  },
+  "innerShadowY":{
+    "min":-3
+  },
+  "innerShadowX":{
+    "min":-3
+  },
+  "textContrast":{
+    "min":-1
+  }
+}

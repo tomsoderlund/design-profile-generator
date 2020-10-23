@@ -1,12 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import { Router } from 'preact-router'
 
-import App from './components/App'
-import * as serviceWorker from './serviceWorker'
+import Start from './pages/Start'
+import Color from './pages/Color'
+import Font from './pages/Font'
+import Shape from './pages/Shape'
 
-ReactDOM.render(<App />, document.getElementById('root'))
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister()
+const App = () => {
+  return (
+    <Router>
+      <Start path='/' />
+      <Color path='/color' />
+      <Font path='/font' />
+      <Shape path='/shape' />
+    </Router>
+  )
+}
+export default App

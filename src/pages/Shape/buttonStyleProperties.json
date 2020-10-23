@@ -1,0 +1,37 @@
+{
+  "default":{
+    "colorsBackground":"#00ced1",
+    "textContrast":0.8,
+
+    "textSize":"16px",  
+    "padding":"0.6em",
+
+    "cornersRoundness":"0.5em",
+
+    "bevelIntensity":0.5,
+    "bevelY":"100%",
+
+    "reflectionIntensity":0.3,
+    "reflectionY":"0.2em",
+    "reflectionSize":"0em",
+    "reflectionBlur":"0.125em",
+
+    "shadowIntensity":0.3,
+    "shadowY":"0.2em",
+    "shadowSize":"0em",
+    "shadowBlur":"0.125em",
+
+    "borderAll":"0em",
+    "borderColor":"#000000",
+    "borderBottom":"0em",
+    "borderBottomColor":"#000000"
+  },
+  "clear":{
+    "cornersRoundness":"0em",
+    "bevelIntensity":0,
+    "reflectionIntensity":0,
+    "shadowIntensity":0,
+    "borderAll":"0em",
+    "borderBottom":"0em"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "colors":[
+    "colorsBackground"
+  ],
+  "text":[
+    "textSize"
+  ],
+  "corners":[
+    "cornersRoundness",
+    "padding"
+  ],
+  "bevel":[
+    "bevelIntensity",
+    "bevelY"
+  ],
+  "innerShadow":[
+    "innerShadowIntensity",
+    "innerShadowX",
+    "innerShadowY",
+    "innerShadowSize",
+    "innerShadowBlur"
+  ],
+  "shadow":[
+    "shadowIntensity",
+    "shadowY",
+    "shadowSize",
+    "shadowBlur"
+  ],
+  "border":[
+    "borderAll",
+    "borderColor",
+    "borderBottom",
+    "borderBottomColor"
+  ]
+}
