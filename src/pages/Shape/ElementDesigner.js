@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { kebabCase } from '../../../lib/helpers'
+import { kebabCase } from '../../lib/helpers'
 
 import StyleSection from './StyleSection'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { guessFormat, spaceCase, titleCase, get } from '../../../lib/helpers'
+import { guessFormat, spaceCase, titleCase, get } from '../../lib/helpers'
 import inputsMetadata from './inputsMetadata.json'
 import defaultValuesForFormat from './defaultValuesForFormat.json'
 
