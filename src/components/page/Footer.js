@@ -9,7 +9,7 @@ const Footer = () => {
       <Link href='/projects'><a>Log in</a></Link>
       {' | '}
    */}
-      This is an early access product from <a href='http://www.tomorroworld.com' target='_blank' rel='noopener noreferrer'>Tomorroworld</a>
+      This is in early access from <a href='http://www.tomorroworld.com' target='_blank' rel='noopener noreferrer'>Tomorroworld</a>
       {' | '}
       <a href='mailto:contact+startupguide@tomorroworld.com' target='_blank' rel='noopener noreferrer'>Contact</a>
     </footer>
